@@ -1,0 +1,24 @@
+# .github/workflows/lint.yml
+
+name: Format and Lint
+
+on: [push]
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install node dependencies
+        run: npm install
+      - name: Run Prettier
+        run: npm prettier .
+
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install node dependencies
+        run: npm install
+      - name: Run ESLint
+        run: npx exlint .

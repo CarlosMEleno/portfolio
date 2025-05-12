@@ -5,32 +5,27 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # o master, depende de tu repo
+      - main
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Paso 1 - Checkout del repositorio
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Paso 2 - Configuración de Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20  # versión recomendada, o la que uses
+          node-version: 22 
 
-      # Paso 3 - Instalar dependencias
       - name: Install dependencies
         run: npm install
 
-      # Paso 4 - Compilar el proyecto (generará la carpeta dist)
       - name: Build project
         run: npm run build
 
-      # Paso 5 - Desplegar en la rama gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
