@@ -12,7 +12,7 @@ jobs:
       - name: Install node dependencies
         run: npm install
       - name: Run Prettier
-        run: npm prettier .
+        run: npx prettier .
 
   eslint:
     runs-on: ubuntu-latest
