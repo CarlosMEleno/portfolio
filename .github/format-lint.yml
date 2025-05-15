@@ -4,7 +4,9 @@ name: Format and Lint
 
 on: [push]
 
+
 jobs:
+
   prettier:
     runs-on: ubuntu-latest
     steps:
