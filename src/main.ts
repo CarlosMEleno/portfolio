@@ -17,7 +17,7 @@ import en from './lang/en'
 import * as languageHelper from './helpers/language'
 import { setI18nInstance, type Translator } from './services/i18n'
 
- /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 const routes = [
   { path: '/', component: HomeView },
   { path: '/work', component: WorkView },
@@ -51,7 +51,4 @@ const i18n = createI18n({
 setI18nInstance(i18n.global as unknown as Translator)
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-createApp(App) 
-  .use(router)
-  .use(i18n)
-  .mount('#app')
+createApp(App).use(router).use(i18n).mount('#app')

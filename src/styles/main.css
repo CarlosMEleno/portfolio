@@ -1,23 +1,23 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@import "./fonts.css";
+@import './fonts.css';
 
 @theme {
   --color-soft-white: #f5f5f5;
   --color-cake-orange: #ffa069;
   --color-cake-green: #bffbca;
 
-  --font-helvetica: "Helvetica", "sans-serif";
-  --font-helvetica-bold: "Helvetica Bold", "sans-serif";
-  --font-helvetica-oblique: "Helvetica Oblique", "sans-serif";
-  --font-helvetica-bold-oblique: "Helvetica BoldOblique", "sans-serif";
-  --font-thedus-condensed-light: "Thedus Condensed Light", "sans-serif";
-  --font-thedus-condensed-light-bold: "Thedus Condensed Light", "sans-serif";
+  --font-helvetica: 'Helvetica', 'sans-serif';
+  --font-helvetica-bold: 'Helvetica Bold', 'sans-serif';
+  --font-helvetica-oblique: 'Helvetica Oblique', 'sans-serif';
+  --font-helvetica-bold-oblique: 'Helvetica BoldOblique', 'sans-serif';
+  --font-thedus-condensed-light: 'Thedus Condensed Light', 'sans-serif';
+  --font-thedus-condensed-light-bold: 'Thedus Condensed Light', 'sans-serif';
 
-  --font-thedus-condensed-light: "Thedus Condensed Light", "sans-serif";
-  --font-thedus-stencil-condensed: "Thedus Stencil Condensed", "sans-serif";
-  --font-thedus-stencil-wide: "Thedus Stencil Wide", "sans-serif";
-  --font-thedus-wide-light: "Thedus Wide Light", "sans-serif";
+  --font-thedus-condensed-light: 'Thedus Condensed Light', 'sans-serif';
+  --font-thedus-stencil-condensed: 'Thedus Stencil Condensed', 'sans-serif';
+  --font-thedus-stencil-wide: 'Thedus Stencil Wide', 'sans-serif';
+  --font-thedus-wide-light: 'Thedus Wide Light', 'sans-serif';
 }
 
 :root {
@@ -31,14 +31,19 @@ body {
   background-color: black;
 }
 
-h1, h2, h3, h4, .title {
-  color : var(--color-soft-white);
+h1,
+h2,
+h3,
+h4,
+.title {
+  color: var(--color-soft-white);
   font-family: var(--font-thedus-wide-light);
   font-variant-ligatures: normal;
   letter-spacing: 1px;
 }
 
-p, li {
+p,
+li {
   color: var(--color-soft-white);
   font-family: var(--font-helvetica);
   font-weight: normal;
