@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-screen bg-[#000000] flex items-center justify-center overflow-hidden relative"
+    class="min-h-screen bg-[#000000] flex items-center justify-center overflow-hidden relative px-4"
   >
     <!-- Industrial/tech background pattern -->
     <div class="absolute inset-0 z-0">
@@ -14,7 +14,7 @@
             d="M 60 0 L 0 0 0 60"
             fill="none"
             stroke="#ffa069"
-            stroke-width="5"
+            stroke-width="7"
           />
         </pattern>
         <rect width="100%" height="100%" fill="url(#grid)" />
@@ -24,7 +24,7 @@
     <!-- Main content with futuristic frame -->
     <div class="relative z-10 max-w-4xl w-full">
       <!-- Industrial frame with animated border -->
-      <div class="p-1 relative">
+      <div class="p-[5px] relative">
         <div
           class="absolute inset-0 bg-gradient-to-r from-[#ffa069] via-[#bffbca] to-[#ffa069] opacity-30 animate-pulse"
         ></div>
@@ -43,23 +43,26 @@
             class="absolute bottom-2 right-2 w-8 h-8 border-r-2 border-b-2 border-[#bffbca]"
           ></div>
 
-          <!-- Content -->
-          <div class="text-center py-16">
-            <h1
-              class="text-[#f5f5f5] text-7xl font-bold tracking-widest mb-8 glitch-text"
+          <div class="text-center pb-16 pt-8">
+            <div
+              class="text-[#f5f5f5] text-4xl font-thedus-stencil-wide font-[600] mb-12"
             >
-              <span class="relative inline-block w-full h-20">
-                <span
-                  class="absolute top-0 left-0 w-full h-full text-[#ffa069] animate-glitch-1"
-                  >Dormant Sounds</span
-                >
-                <span
-                  class="absolute top-0 left-0 w-full h-full text-[#bffbca] animate-glitch-2"
-                  >Dormant Sounds</span
-                >
-              </span>
-            </h1>
-            <div class="h-1 w-64 mx-auto bg-[#ffa069]"></div>
+              <div class="animate-marquee">
+                <template v-for="i in 40" :key="i">
+                  <h1>
+                    <span class="ms-3 text-[#ffa069] animate-glitch-1"
+                      >DORMANT SOUNDS</span
+                    >
+                  </h1>
+                  <h1>
+                    <span class="ms-3 text-[#bffbca] animate-glitch-2"
+                      >DORMANT SOUNDS</span
+                    >
+                  </h1>
+                </template>
+              </div>
+            </div>
+            <div class="h-1 w-44 mx-auto bg-[#ffa069]"></div>
             <p
               class="!text-[#a0a0a0] mt-8 text-2xl font-thedus-condensed-light"
             >
@@ -82,52 +85,31 @@
   </div>
 </template>
 
-<style scoped>
-@keyframes glitch-1 {
+<style>
+@keyframes text-banish {
   0%,
   100% {
     opacity: 0;
-    transform: translate(0);
   }
 
   20% {
     opacity: 0.3;
-    transform: translate(-4px, 2px);
+  }
+
+  30% {
+    opacity: 0.4;
   }
 
   40% {
-    opacity: 0;
+    opacity: 0.6;
   }
 
-  60% {
+  50% {
+    opacity: 0.9;
+  }
+
+  70% {
     opacity: 0.3;
-    transform: translate(2px, -1px);
-  }
-
-  80% {
-    opacity: 0;
-  }
-}
-
-@keyframes glitch-2 {
-  0%,
-  100% {
-    opacity: 0;
-    transform: translate(0);
-  }
-
-  20% {
-    opacity: 0.3;
-    transform: translate(5px, -2px);
-  }
-
-  40% {
-    opacity: 0;
-  }
-
-  60% {
-    opacity: 0.3;
-    transform: translate(-2px, 0px);
   }
 
   80% {
@@ -161,18 +143,35 @@
 }
 
 .animate-glitch-1 {
-  animation: glitch-1 3s infinite linear alternate-reverse;
+  animation: text-banish 7s infinite linear alternate-reverse;
 }
 
 .animate-glitch-2 {
-  animation: glitch-2 2.7s infinite linear alternate-reverse;
+  animation: text-banish 4.7s infinite linear alternate-reverse;
 }
 
 .animate-loading-bar {
   animation: loading-bar 8s infinite;
 }
 
-.animate-blink {
-  animation: blink 1.5s infinite;
+.animate-marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.animate-marquee h1 {
+  display: inline-block;
+  animation: marquee 80s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-2000%);
+  }
 }
 </style>
