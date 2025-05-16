@@ -1,5 +1,26 @@
 @import './fonts.css';
 
+@import 'tailwindcss';
+
+@theme {
+  --color-soft-white: #f5f5f5;
+  --color-cake-orange: #ffa069;
+  --color-cake-green: #bffbca;
+  --color-green-blue: #8ccbc2;
+
+  --font-helvetica: 'Helvetica', 'sans-serif';
+  --font-helvetica-bold: 'Helvetica Bold', 'sans-serif';
+  --font-helvetica-oblique: 'Helvetica Oblique', 'sans-serif';
+  --font-helvetica-bold-oblique: 'Helvetica BoldOblique', 'sans-serif';
+  --font-thedus-condensed-light: 'Thedus Condensed Light', 'sans-serif';
+  --font-thedus-condensed-light-bold: 'Thedus Condensed Light', 'sans-serif';
+
+  --font-thedus-condensed-light: 'Thedus Condensed Light', 'sans-serif';
+  --font-thedus-stencil-condensed: 'Thedus Stencil Condensed', 'sans-serif';
+  --font-thedus-stencil-wide: 'Thedus Stencil Wide', 'sans-serif';
+  --font-thedus-wide-light: 'Thedus Wide Light', 'sans-serif';
+}
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,26 +41,6 @@ h4,
   font-family: var(--font-thedus-wide-light);
   font-variant-ligatures: normal;
   letter-spacing: 1px;
-}
-
-@import 'tailwindcss';
-
-@theme {
-  --color-soft-white: #f5f5f5;
-  --color-cake-orange: #ffa069;
-  --color-cake-green: #bffbca;
-
-  --font-helvetica: 'Helvetica', 'sans-serif';
-  --font-helvetica-bold: 'Helvetica Bold', 'sans-serif';
-  --font-helvetica-oblique: 'Helvetica Oblique', 'sans-serif';
-  --font-helvetica-bold-oblique: 'Helvetica BoldOblique', 'sans-serif';
-  --font-thedus-condensed-light: 'Thedus Condensed Light', 'sans-serif';
-  --font-thedus-condensed-light-bold: 'Thedus Condensed Light', 'sans-serif';
-
-  --font-thedus-condensed-light: 'Thedus Condensed Light', 'sans-serif';
-  --font-thedus-stencil-condensed: 'Thedus Stencil Condensed', 'sans-serif';
-  --font-thedus-stencil-wide: 'Thedus Stencil Wide', 'sans-serif';
-  --font-thedus-wide-light: 'Thedus Wide Light', 'sans-serif';
 }
 
 .main-container-with {

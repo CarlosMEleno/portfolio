@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-screen bg-[#000000] flex items-center justify-center overflow-hidden relative px-4"
+    class="min-h-screen bg-[#000000] flex items-center justify-center overflow-hidden relative px-1 sm:px-4"
   >
     <!-- Industrial/tech background pattern -->
     <div class="absolute inset-0 z-0">
@@ -26,21 +26,46 @@
       <!-- Industrial frame with animated border -->
       <div class="p-[5px] relative">
         <div
-          class="absolute inset-0 bg-gradient-to-r from-[#ffa069] via-[#bffbca] to-[#ffa069] opacity-30 animate-pulse"
+          class="absolute inset-0 bg-gradient-to-r from-cake-orange via-cake-green to-cake-orange opacity-100 animate-pulse"
         ></div>
         <div class="relative bg-black border border-[#ffa069]/30 p-8">
           <!-- Corner accents -->
           <div
-            class="absolute top-2 left-2 w-8 h-8 border-l-2 border-t-2 border-[#bffbca]"
+            class="absolute top-2 left-2 w-8 h-8 border-l-2 border-t-2 border-cake-green animate-pulse"
           ></div>
           <div
-            class="absolute top-2 right-2 w-8 h-8 border-r-2 border-t-2 border-[#bffbca]"
+            class="absolute top-2 right-2 w-8 h-8 border-r-2 border-t-2 border-cake-green animate-pulse"
           ></div>
           <div
-            class="absolute bottom-2 left-2 w-8 h-8 border-l-2 border-b-2 border-[#bffbca]"
+            class="absolute bottom-2 left-2 w-8 h-8 border-l-2 border-b-2 border-cake-green animate-pulse"
           ></div>
           <div
-            class="absolute bottom-2 right-2 w-8 h-8 border-r-2 border-b-2 border-[#bffbca]"
+            class="absolute bottom-2 right-2 w-8 h-8 border-r-2 border-b-2 border-cake-green animate-pulse"
+          ></div>
+
+          <!-- Decorative circular element -->
+          <div
+            class="absolute top-4 right-4 w-[8px] h-[24px] rounded-full bg-cake-orange/30 border border-cake-green animate-pulse"
+          ></div>
+
+          <div
+            class="absolute top-4 right-[30px] w-[8px] h-[8px] rounded-full bg-cake-orange/30 border border-cake-green animate-pulse"
+          ></div>
+
+          <div
+            class="absolute bottom-4 left-4 w-[8px] h-[24px] rounded-full bg-cake-orange/30 border border-cake-green animate-pulse"
+          ></div>
+
+          <div
+            class="absolute bottom-4 left-[30px] w-[8px] h-[8px] rounded-full bg-cake-orange/30 border border-cake-green animate-pulse"
+          ></div>
+
+          <div
+            class="absolute top-4 left-[15px] w-[8px] h-[8px] rounded-full bg-cake-orange/30 border border-cake-green animate-pulse"
+          ></div>
+
+          <div
+            class="absolute bottom-4 right-[15px] w-[8px] h-[8px] rounded-full bg-cake-orange/30 border border-cake-green animate-pulse"
           ></div>
 
           <div class="text-center pb-16 pt-8">
@@ -50,19 +75,19 @@
               <div class="animate-marquee">
                 <template v-for="i in 40" :key="i">
                   <h1>
-                    <span class="ms-3 text-[#ffa069] animate-glitch-1"
+                    <span class="ms-3 text-cake-orange animate-glitch-1"
                       >DORMANT SOUNDS</span
                     >
                   </h1>
                   <h1>
-                    <span class="ms-3 text-[#bffbca] animate-glitch-2"
+                    <span class="ms-3 text-cake-green animate-glitch-2"
                       >DORMANT SOUNDS</span
                     >
                   </h1>
                 </template>
               </div>
             </div>
-            <div class="h-1 w-44 mx-auto bg-[#ffa069]"></div>
+            <div class="h-[1px] max-w-120 mx-auto bg-cake-orange"></div>
             <p
               class="!text-[#a0a0a0] mt-8 text-2xl font-thedus-condensed-light"
             >
@@ -71,7 +96,7 @@
 
             <!-- Loading indicator -->
             <div
-              class="mt-12 w-64 h-2 bg-gray-800 mx-auto rounded-full overflow-hidden"
+              class="mt-9 max-w-64 h-2 bg-gray-800 mx-auto rounded-full overflow-hidden"
             >
               <div class="h-full bg-[#bffbca] animate-loading-bar"></div>
             </div>
@@ -151,7 +176,7 @@
 }
 
 .animate-loading-bar {
-  animation: loading-bar 8s infinite;
+  animation: loading-bar 8s infinite alternate-reverse;
 }
 
 .animate-marquee {
