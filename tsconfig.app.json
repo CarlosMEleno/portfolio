@@ -8,6 +8,10 @@
     "strictNullChecks": true,
     "types": ["vite/client"],
     "noImplicitAny": false,
-    "paths": {}
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@images/*": ["src/images/*"]
+    }
   }
 }

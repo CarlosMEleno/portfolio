@@ -1,4 +1,15 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { usePageBackground } from '../composables/usePageBackground'
+import creditsImg from '@images/credits.jpg'
+
+const { useViewBackground } = usePageBackground()
+
+useViewBackground({
+  imageSrc: creditsImg,
+  speed: 0.4,
+  type: 'scroll',
+})
+</script>
 
 <template>
   <div>

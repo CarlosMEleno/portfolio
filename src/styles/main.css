@@ -3,11 +3,10 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-soft-white: #f5f5f5;
-  --color-cake-orange: #ffa069;
-  --color-cake-green: #bffbca;
-  --color-green-blue: #8ccbc2;
-
+  --color-black: #000000bf;
+  --color-ocre-soft: #8e8f54a6;
+  
+  /*
   --font-helvetica: 'Helvetica', 'sans-serif';
   --font-helvetica-bold: 'Helvetica Bold', 'sans-serif';
   --font-helvetica-oblique: 'Helvetica Oblique', 'sans-serif';
@@ -19,6 +18,15 @@
   --font-thedus-stencil-condensed: 'Thedus Stencil Condensed', 'sans-serif';
   --font-thedus-stencil-wide: 'Thedus Stencil Wide', 'sans-serif';
   --font-thedus-wide-light: 'Thedus Wide Light', 'sans-serif';
+  */
+  --font-nunito-sans: 'Nunito Sans', sans-serif;
+}
+.nunito-sans {
+  font-family: var(--font-nunito-sans);
+  font-weight: 400;
+  line-height: 1.4;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 :root {
@@ -29,18 +37,7 @@
 }
 
 body {
-  background-color: black;
-}
-
-h1,
-h2,
-h3,
-h4,
-.title {
-  color: var(--color-soft-white);
-  font-family: var(--font-thedus-wide-light);
-  font-variant-ligatures: normal;
-  letter-spacing: 1px;
+  background-color: #000000;
 }
 
 .main-container-with {

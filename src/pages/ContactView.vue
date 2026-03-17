@@ -1,4 +1,16 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { usePageBackground } from '../composables/usePageBackground'
+// Añade tu imagen en src/images/contact.jpg o usa una existente
+import contactImg from '@images/contact.jpg'
+
+const { useViewBackground } = usePageBackground()
+
+useViewBackground({
+  imageSrc: contactImg,
+  speed: 0.3,
+  type: 'scroll',
+})
+</script>
 
 <template>
   <div>

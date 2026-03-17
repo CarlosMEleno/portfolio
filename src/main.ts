@@ -5,9 +5,9 @@ import App from './App.vue'
 import { createWebHistory, createRouter } from 'vue-router'
 
 import HomeView from './pages/HomeView.vue'
-import WorkView from './pages/WorkView.vue'
+import RedactedView from './pages/RedactedView.vue'
 import CreditsView from './pages/CreditsView.vue'
-import DiscographyView from './pages/DiscographyView.vue'
+import VideoView from './pages/VideoView.vue'
 import AudioView from './pages/AudioView.vue'
 import ContactView from './pages/ContactView.vue'
 
@@ -20,10 +20,10 @@ import { setI18nInstance, type Translator } from './services/i18n'
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 const routes = [
   { path: '/', component: HomeView },
-  { path: '/work', component: WorkView },
-  { path: '/credits', component: CreditsView },
-  { path: '/discography', component: DiscographyView },
   { path: '/audio', component: AudioView },
+  { path: '/video', component: VideoView },
+  { path: '/credits', component: CreditsView },
+  { path: '/redacted', component: RedactedView },
   { path: '/contact', component: ContactView },
 ]
 /* eslint-enable @typescript-eslint/no-unsafe-assignment */
