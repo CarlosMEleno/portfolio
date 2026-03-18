@@ -11,6 +11,8 @@ interface Props {
     disableParallax?: boolean
     containerClass?: string
     overlayColor?: string
+    initialOffset?: number
+    scale?: number
     // kept for API compatibility, not used in this implementation
     type?: string
     imgSize?: string
@@ -25,6 +27,8 @@ const props = withDefaults(defineProps<Props>(), {
     disableParallax: defaultParallaxOptions.disableParallax,
     containerClass: '',
     overlayColor: undefined,
+    initialOffset: 0,
+    scale: 1,
 })
 
 const containerRef = ref<HTMLElement | null>(null)
@@ -38,8 +42,10 @@ const isVisible = ref(false)
 // Factor = speed * 0.3 → e.g. speed 0.5 → image moves at 15% of scroll rate.
 const onScroll = (): void => {
     if (!imgRef.value || props.disableParallax) return
-    const offset = -(window.scrollY * props.speed! * 0.3)
-    imgRef.value.style.transform = `translateY(${offset}px)`
+    const scrollOffset = -(window.scrollY * props.speed! * 0.3)
+    const totalOffset = scrollOffset + (props.initialOffset ?? 0)
+    const scaleValue = props.scale ?? 1
+    imgRef.value.style.transform = `translateY(${totalOffset}px) scale(${scaleValue})`
 }
 
 onMounted((): void => {
@@ -65,24 +71,13 @@ onUnmounted((): void => {
 </script>
 
 <template>
-    <div
-        ref="containerRef"
+    <div ref="containerRef"
         :class="['parallax-background fixed inset-0 overflow-hidden pointer-events-none', containerClass, { 'is-visible': isVisible }]"
-        :style="{ zIndex }"
-    >
-        <img
-            ref="imgRef"
-            :src="imageSrc"
-            class="parallax-img"
-            :style="{ objectPosition: imgPosition ?? 'center' }"
-            alt=""
-            aria-hidden="true"
-        />
-        <div
-            v-if="overlayColor"
-            class="absolute inset-0 pointer-events-none"
-            :style="{ backgroundColor: overlayColor }"
-        />
+        :style="{ zIndex }">
+        <img ref="imgRef" :src="imageSrc" class="parallax-img" :style="{ objectPosition: imgPosition ?? 'center' }"
+            alt="" aria-hidden="true" />
+        <div v-if="overlayColor" class="absolute inset-0 pointer-events-none"
+            :style="{ backgroundColor: overlayColor }" />
     </div>
 </template>
 

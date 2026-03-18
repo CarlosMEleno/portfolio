@@ -19,12 +19,15 @@ const { currentBackground } = usePageBackground()
       :img-size="currentBackground.imgSize" :img-position="currentBackground.imgPosition"
       :img-repeat="currentBackground.imgRepeat" :keep-img="currentBackground.keepImg"
       :z-index="currentBackground.zIndex" :disable-parallax="currentBackground.disableParallax"
-      :container-class="currentBackground.containerClass" :overlay-color="currentBackground.overlayColor" />
+      :container-class="currentBackground.containerClass" :overlay-color="currentBackground.overlayColor"
+      :initial-offset="currentBackground.initialOffset" :scale="currentBackground.scale" />
 
     <Header />
 
-    <main class="main-container-with mx-auto flex-grow py-8 relative z-10">
-      <router-view />
+    <main class="w-full px-4 sm:px-6 lg:px-8 flex-grow relative z-10">
+      <div class="max-w-5xl mx-auto py-8 sm:py-12 lg:py-16">
+        <router-view />
+      </div>
     </main>
 
     <Footer />

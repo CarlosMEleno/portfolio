@@ -82,6 +82,18 @@ export interface ParallaxOptions {
    * Overlay color (with opacity). Example: 'rgba(0,0,0,0.5)'
    */
   overlayColor?: string
+
+  /**
+   * Initial vertical offset in pixels (positive = start lower, negative = start higher)
+   * @default 0
+   */
+  initialOffset?: number
+
+  /**
+   * Image scale factor. Values < 1 zoom out, > 1 zoom in
+   * @default 1
+   */
+  scale?: number
 }
 
 export const defaultParallaxOptions: Partial<ParallaxOptions> = {
@@ -93,4 +105,6 @@ export const defaultParallaxOptions: Partial<ParallaxOptions> = {
   keepImg: true,
   zIndex: -100,
   disableParallax: false,
+  initialOffset: 0,
+  scale: 1,
 }

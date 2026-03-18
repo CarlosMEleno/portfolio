@@ -1,34 +1,25 @@
+/* ==========================================================================
+   1. IMPORTS
+   ========================================================================== */
 @import './fonts.css';
-
 @import 'tailwindcss';
 
+/* ==========================================================================
+   2. TAILWIND THEME CUSTOMIZATION
+   ========================================================================== */
 @theme {
+  /* Colors */
   --color-black: #000000bf;
   --color-ocre-soft: #8e8f54a6;
-  
-  /*
-  --font-helvetica: 'Helvetica', 'sans-serif';
-  --font-helvetica-bold: 'Helvetica Bold', 'sans-serif';
-  --font-helvetica-oblique: 'Helvetica Oblique', 'sans-serif';
-  --font-helvetica-bold-oblique: 'Helvetica BoldOblique', 'sans-serif';
-  --font-thedus-condensed-light: 'Thedus Condensed Light', 'sans-serif';
-  --font-thedus-condensed-light-bold: 'Thedus Condensed Light', 'sans-serif';
 
-  --font-thedus-condensed-light: 'Thedus Condensed Light', 'sans-serif';
-  --font-thedus-stencil-condensed: 'Thedus Stencil Condensed', 'sans-serif';
-  --font-thedus-stencil-wide: 'Thedus Stencil Wide', 'sans-serif';
-  --font-thedus-wide-light: 'Thedus Wide Light', 'sans-serif';
-  */
-  --font-nunito-sans: 'Nunito Sans', sans-serif;
-}
-.nunito-sans {
-  font-family: var(--font-nunito-sans);
-  font-weight: 400;
-  line-height: 1.4;
-  font-optical-sizing: auto;
-  font-style: normal;
+  /* Font Families */
+  --font-nunito-sans: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+  --font-astron: 'Astron', 'Nunito Sans', sans-serif;
 }
 
+/* ==========================================================================
+   3. BASE STYLES - Font defaults only
+   ========================================================================== */
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -38,9 +29,13 @@
 
 body {
   background-color: #000000;
+  color: #f5f5f5;
+  font-family: var(--font-nunito-sans);
 }
 
-.main-container-with {
-  max-width: 950px;
-  width: 100%;
+h1,
+h2 {
+  font-family: var(--font-astron);
 }
+
+

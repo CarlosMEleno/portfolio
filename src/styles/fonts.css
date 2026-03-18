@@ -1,4 +1,15 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght,YTLC@0,6..12,75..125,200..1000,440..540;1,6..12,75..125,200..1000,440..540&display=swap');
+
+@font-face {
+  font-family: 'Astron';
+  src: url('/fonts/astron/Astron-Regular.woff2') format('woff2'),
+    url('/fonts/astron/Astron-Regular.woff') format('woff');
+  /* fallback opcional */
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 /*
 @font-face {

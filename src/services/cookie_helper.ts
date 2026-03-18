@@ -36,7 +36,7 @@ export function readCookie(cookieName: string): string | null {
   for (const cookie of cookieArray) {
     const [key, value] = cookie.split('=')
 
-    if (key?.trim() === cookieName && value !== undefined) {
+    if (key.trim() === cookieName) {
       return decodeURIComponent(value)
     }
   }

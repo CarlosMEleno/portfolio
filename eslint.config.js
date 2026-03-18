@@ -2,6 +2,7 @@ import pluginVue from 'eslint-plugin-vue'
 import love from 'eslint-config-love'
 import eslint from '@eslint/js'
 import prettier from 'eslint-config-prettier'
+import tseslint from 'typescript-eslint'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -13,6 +14,16 @@ export default [
   {
     ...love,
     files: ['**/*.ts'],
+  },
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parserOptions: {
+        parser: tseslint.parser,
+        extraFileExtensions: ['.vue'],
+        sourceType: 'module',
+      },
+    },
   },
   prettier,
   {
