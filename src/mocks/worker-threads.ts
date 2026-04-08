@@ -1,15 +1,6 @@
-// Browser stub for Node.js 'worker_threads' module
-// Required by wavesurfer.js spectrogram plugin when bundled with Vite
-
-export class Worker {
-  constructor(_scriptPath: string) {}
-  postMessage(_value: unknown) {}
-  terminate(): Promise<number> { return Promise.resolve(0) }
-  on(_event: string, _listener: (...args: unknown[]) => void) { return this }
-  once(_event: string, _listener: (...args: unknown[]) => void) { return this }
-  off(_event: string, _listener: (...args: unknown[]) => void) { return this }
-}
-
+// Browser stub for Node.js 'worker_threads' module.
+// Worker must be null so wavesurfer spectrogram plugin falls back to main-thread FFT processing.
+export const Worker = null
 export const isMainThread = true
 export const parentPort = null
 export const workerData = undefined

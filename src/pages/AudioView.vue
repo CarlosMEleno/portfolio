@@ -2,7 +2,9 @@
 import { usePageBackground } from '../composables/usePageBackground'
 import audioImg from '@images/audio.jpg'
 import AudioPlayer from '../components/AudioPlayer.vue'
-import audioTest from "../audio/Traversing the Ecumen Refinery.wav"
+import audioTrack1 from "../audio/Traversing the Ecumen Refinery.wav"
+import audioTrack2 from "../audio/test.mp3"
+
 const { useViewBackground } = usePageBackground()
 
 useViewBackground({
@@ -19,18 +21,17 @@ useViewBackground({
       {{ $t('audio.title') }}
     </h1>
 
-    <div class="mt-20 w-max">
-      <p class="text-lg sm:text-xl md:text-2xl max-w-2xl bg-black/30 p-3 animate-terminal-flicker
-      animation-delay-300 text-justify">
+    <div class="mt-20">
+      <p
+        class="text-lg sm:text-xl md:text-2xl max-w-2xl bg-black/30 p-3 animate-terminal-flicker animation-delay-300 text-justify">
         Como parte de nuestra labor en Dormant Sounds, creemos firmemente que el medio sonoro posee un potencial todavía
         por explotar. Pese a ser habitualmente menospreciado, el oído es un sentido íntimamente ligado con nuestra
         percepción y comprensión del mundo. De forma subconsciente, el oído es nuestro sensor más rápido y agudo cuando
-        se
-        trata de percibir aquello que está fuera de lugar.
+        se trata de percibir aquello que está fuera de lugar.
         <br><br>
         La vista es fácil de engañar. El oído no es tan ingenuo. Su sensibilidad para percibir las anomalías en el
-        entorno
-        mucho antes de que el cerebro pueda racionalizarlas lo convierten en nuestro "ángel de la guarda" atávico.
+        entorno mucho antes de que el cerebro pueda racionalizarlas lo convierten en nuestro "ángel de la guarda"
+        atávico.
         <br><br>
         La recuperación/archivado de estos materiales sonoros refleja nuestra convicción de que el descubrimiento de la
         naturaleza de lo que nos rodea, pasa inevitablemente por nuestros oídos. Los materiales que va a escuchar a
@@ -38,11 +39,20 @@ useViewBackground({
         <br><br><br>
         Oír para creer.
       </p>
-      <div class="mt-20 flex justify-end w-full">
-        <div class="clear-both  w-[800px]">
-          <AudioPlayer :src="audioTest" />
-        </div>
-      </div>
     </div>
+
+    <!-- Audio entries -->
+    <div class="mt-20 flex flex-col items-center gap-16 max-w-3xl mx-auto">
+
+      <div class="w-full">
+        <AudioPlayer :src="audioTrack1" title="Traversing the Ecumen Refinery" />
+      </div>
+
+      <div class="w-full border-t border-white/10 pt-16">
+        <AudioPlayer :src="audioTrack2" title="Test Signal — Archivo 002" />
+      </div>
+
+    </div>
+
   </div>
 </template>
