@@ -21,9 +21,9 @@ useViewBackground({
       {{ $t('audio.title') }}
     </h1>
 
-    <div class="mt-20">
+    <div class="mt-20 ml-auto max-w-2xl">
       <p
-        class="text-lg sm:text-xl md:text-2xl max-w-2xl bg-black/30 p-3 animate-terminal-flicker animation-delay-300 text-justify">
+        class="text-lg sm:text-xl md:text-2xl bg-black/30 p-3 animate-terminal-flicker animation-delay-300 text-justify">
         Como parte de nuestra labor en Dormant Sounds, creemos firmemente que el medio sonoro posee un potencial todavía
         por explotar. Pese a ser habitualmente menospreciado, el oído es un sentido íntimamente ligado con nuestra
         percepción y comprensión del mundo. De forma subconsciente, el oído es nuestro sensor más rápido y agudo cuando
@@ -42,7 +42,7 @@ useViewBackground({
     </div>
 
     <!-- Audio entries -->
-    <div class="mt-20 flex flex-col items-center gap-16 max-w-3xl mx-auto">
+    <div class="mt-30 flex flex-col items-center gap-16 max-w-3xl mx-auto">
 
       <div class="w-full">
         <AudioPlayer :src="audioTrack1" title="Traversing the Ecumen Refinery" />

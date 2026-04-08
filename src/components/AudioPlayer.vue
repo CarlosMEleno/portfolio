@@ -23,7 +23,7 @@ const currentTime = ref(0)
 const totalDuration = ref(0)
 const volume = ref(0.8)
 const isMuted = ref(false)
-const zoomLevel = ref(1)
+const zoomLevel = ref(90)
 const showSpectrogram = ref(true)
 const isMarquee = ref(false)
 const marqueeDuration = ref('20s')
@@ -167,21 +167,19 @@ const zoomOut = () => {
     <!-- Title with marquee -->
     <div v-if="props.title" ref="titleContainerRef" class="relative overflow-hidden mb-4 w-full select-text">
       <!-- Invisible span used only for measuring true text width (no gap padding, no layout impact) -->
-      <span
-        ref="titleMeasureRef"
+      <span ref="titleMeasureRef"
         class="absolute top-0 left-0 font-astron uppercase tracking-[0.35em] whitespace-nowrap text-sm sm:text-base leading-none pointer-events-none"
-        style="visibility: hidden"
-        aria-hidden="true"
-      >{{ props.title }}</span>
+        style="visibility: hidden" aria-hidden="true">{{ props.title }}</span>
 
       <!-- Animated row: one copy when static, two copies when marquee for seamless loop -->
-      <div
-        class="inline-flex"
-        :class="{ 'marquee-active': isMarquee }"
-        :style="isMarquee ? { '--marquee-dur': marqueeDuration } : {}"
-      >
-        <span class="font-astron uppercase tracking-[0.35em] whitespace-nowrap text-white/70 text-sm sm:text-base leading-none pr-20">{{ props.title }}</span>
-        <span v-if="isMarquee" aria-hidden="true" class="font-astron uppercase tracking-[0.35em] whitespace-nowrap text-white/70 text-sm sm:text-base leading-none pr-20">{{ props.title }}</span>
+      <div class="inline-flex" :class="{ 'marquee-active': isMarquee }"
+        :style="isMarquee ? { '--marquee-dur': marqueeDuration } : {}">
+        <span
+          class="font-astron uppercase tracking-[0.35em] whitespace-nowrap text-white/70 text-sm sm:text-base leading-none pr-20">{{
+            props.title }}</span>
+        <span v-if="isMarquee" aria-hidden="true"
+          class="font-astron uppercase tracking-[0.35em] whitespace-nowrap text-white/70 text-sm sm:text-base leading-none pr-20">{{
+            props.title }}</span>
       </div>
     </div>
 
@@ -336,8 +334,13 @@ const zoomOut = () => {
 }
 
 @keyframes audio-marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .volume-range {

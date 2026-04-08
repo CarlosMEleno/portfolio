@@ -4,8 +4,10 @@ import Footer from './layout/Footer.vue'
 import ParallaxBackground from './components/ParallaxBackground.vue'
 
 import { usePageBackground } from './composables/usePageBackground'
+import { useMainWidth } from './composables/useMainWidth'
 
 const { currentBackground } = usePageBackground()
+const { currentMaxWidth } = useMainWidth()
 </script>
 
 <template>
@@ -22,8 +24,8 @@ v-if="currentBackground" :key="currentBackground.imageSrc"
 
     <Header />
 
-    <main class="w-full px-4 sm:px-6 lg:px-8 flex-grow relative z-10">
-      <div class="max-w-5xl mx-auto py-8 sm:py-12 lg:py-16">
+    <main class="w-full px-4 flex-grow relative z-10">
+      <div class="mx-auto py-8 sm:py-12 lg:py-16 transition-[max-width] duration-300" :class="currentMaxWidth">
         <router-view />
       </div>
     </main>
