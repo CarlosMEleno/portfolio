@@ -10,6 +10,7 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@images': path.resolve(__dirname, './src/images'),
+      'worker_threads': path.resolve(__dirname, './src/mocks/worker-threads.ts'),
     },
   },
 })

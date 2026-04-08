@@ -38,4 +38,66 @@ h2 {
   font-family: var(--font-astron);
 }
 
+p, ul, li {
+  font-family: var(--font-nunito-sans);
+  font-weight: 300;
+  font-size: 20px;
+}
 
+
+@keyframes terminal-flicker {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.8;
+  }
+
+  15% {
+    opacity: 0.2;
+  }
+
+  20% {
+    opacity: 0.9;
+  }
+
+  25% {
+    opacity: 0.3;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  35% {
+    opacity: 0.4;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-terminal-flicker {
+  animation: terminal-flicker 1.6s ease-out forwards;
+}
+
+.animation-delay-100 {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.25s;
+  opacity: 0;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+  opacity: 0;
+}

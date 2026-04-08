@@ -1,11 +1,9 @@
-import type { LanguageCode } from '../types/language'
-
 /**
  * Interface for the i18n translator instance
  */
 export interface Translator {
   /** Current locale code */
-  locale: LanguageCode | string
+  locale: string
   /**
    * Translate a key to the current locale
    * @param key - Translation key
@@ -22,7 +20,7 @@ let i18n: Translator | undefined = undefined
  * @throws Error if i18n is not initialized
  */
 function useI18nInstance(): Translator {
-  if (!i18n) {
+  if (i18n === undefined) {
     throw new Error('i18n instance not initialized. Call setI18nInstance first.')
   }
   return i18n

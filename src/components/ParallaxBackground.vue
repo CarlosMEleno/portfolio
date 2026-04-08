@@ -13,10 +13,6 @@ interface Props {
     overlayColor?: string
     initialOffset?: number
     scale?: number
-    // kept for API compatibility, not used in this implementation
-    type?: string
-    imgSize?: string
-    imgRepeat?: string
     keepImg?: boolean
 }
 
@@ -71,12 +67,15 @@ onUnmounted((): void => {
 </script>
 
 <template>
-    <div ref="containerRef"
+    <div
+ref="containerRef"
         :class="['parallax-background fixed inset-0 overflow-hidden pointer-events-none', containerClass, { 'is-visible': isVisible }]"
         :style="{ zIndex }">
-        <img ref="imgRef" :src="imageSrc" class="parallax-img" :style="{ objectPosition: imgPosition ?? 'center' }"
+        <img
+ref="imgRef" :src="imageSrc" class="parallax-img" :style="{ objectPosition: imgPosition ?? 'center' }"
             alt="" aria-hidden="true" />
-        <div v-if="overlayColor" class="absolute inset-0 pointer-events-none"
+        <div
+v-if="overlayColor" class="absolute inset-0 pointer-events-none"
             :style="{ backgroundColor: overlayColor }" />
     </div>
 </template>

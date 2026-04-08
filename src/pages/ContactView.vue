@@ -14,9 +14,10 @@ useViewBackground({
 
 <template>
   <div>
-    <h1 class="text-orange-500 text-2xl">Contact</h1>
-    <p class="mt-5">
-      {{ $t('fake-text') }}
-    </p>
+    <div>
+      <h1 class="text-5xl font-semibold tracking-[0.4em] animate-terminal-flicker uppercase">
+        {{ $t('contact') }}
+      </h1>
+    </div>
   </div>
 </template>

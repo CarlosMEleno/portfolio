@@ -7,7 +7,7 @@ import { type LanguageCode, SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, isLanguageCod
  * Checks cookie first, then browser language, defaults to 'en'
  */
 export function evalUserLang(): LanguageCode {
-  const cookieLang = readCookie('X-Selected-Lang')
+  const cookieLang = readCookie('__lang__')
 
   if (cookieLang !== null && isLanguageCode(cookieLang)) {
     return cookieLang
@@ -42,7 +42,7 @@ function changeLocaleOnI18n(lang: LanguageCode): void {
 }
 
 function changeLangInXSelectedLangCookie(lang: LanguageCode): void {
-  setPermanentCookie('X-Selected-Lang', lang)
+  setPermanentCookie('__lang__', lang)
 }
 
 // Re-export types for convenience

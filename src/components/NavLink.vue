@@ -19,7 +19,7 @@ const emit = defineEmits<{
     'md:px-3 md:py-1.5 md:text-sm md:tracking-wide',
     'font-bold hover:text-white/40',
     $route.path === route
-      ? 'text-amber-400 md:border-b-2 md:border-amber-400'
+      ? 'text-white md:border-b-2 md:border-white'
       : 'text-white/80 md:border-b-2 md:border-transparent',
   ]" @click="emit('click')">
     {{ text }}
