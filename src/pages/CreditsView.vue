@@ -6,10 +6,10 @@ const { useViewBackground } = usePageBackground()
 
 useViewBackground({
   imageSrc: creditsImg,
-  speed: 3.5,
+  speed: 4.6,
   type: 'scroll',
   imgSize: 'cover',
-  imgPosition: 'top',
+  //imgPosition: 'top',
   initialOffset: 390,
   scale: 1,
 })
@@ -50,23 +50,16 @@ useViewBackground({
         <div class="mt-4 space-y-6">
           <div class="">
             <p class="font-semibold">Those Who Wander</p>
-            <p>Dir: Adrián González Fernández "Disso"</p>
-            <p>Banda Sonora Original, Diseño Sonoro</p>
+            <p class="!text-[17px]">Dir: Adrián González Fernández "Disso"</p>
+            <p class="!text-[17px]">Banda Sonora Original, Diseño Sonoro</p>
             <a href="https://www.youtube.com/watch?v=rmHXOcQxVOE" target="_blank" rel="noopener noreferrer"
               class="credits-link">https://www.youtube.com/watch?v=rmHXOcQxVOE</a>
           </div>
 
           <div class="">
             <p class="font-semibold">PLANES, HUECOS II Festival de Cortos Pelabravo Express</p>
-            <p>Grupo: La Zarrampla</p>
-            <p class="mt-3">Integrantes:</p>
-            <ul class="credits-list mt-2">
-              <li>Jorge Sánchez Rodríguez</li>
-              <li>María Valdizán Cuende</li>
-              <li>Andrés Casas Vyssotsky</li>
-              <li>Carlos Martínez Eleno</li>
-            </ul>
-            <p class="mt-3">Banda Sonora, Grabación y Diseño Sonoros</p>
+            <p class="!text-[17px]">Grupo: La Zarrampla</p>
+            <p class="!text-[17px]">Banda Sonora, Grabación y Diseño Sonoros</p>
             <a href="https://www.youtube.com/watch?v=7DbQNOJ_l4g&t=1s" target="_blank" rel="noopener noreferrer"
               class="credits-link">https://www.youtube.com/watch?v=7DbQNOJ_l4g&t=1s</a>
           </div>
@@ -98,7 +91,7 @@ useViewBackground({
 .credits-link {
   display: inline-block;
   margin-top: 0.25rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   opacity: 0.65;
   word-break: break-all;
   transition: opacity 0.2s;

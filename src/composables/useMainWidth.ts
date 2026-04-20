@@ -1,6 +1,6 @@
 import { ref, readonly, onMounted, onUnmounted, type DeepReadonly, type Ref } from 'vue'
 
-const DEFAULT_MAX_WIDTH = 'max-w-4xl'
+const DEFAULT_MAX_WIDTH = 'max-w-[800px]'
 
 const currentMaxWidth = ref(DEFAULT_MAX_WIDTH)
 
