@@ -71,12 +71,12 @@ onMounted((): void => {
   isMd.value = window.innerWidth >= MD_BREAKPOINT
 
   const onImageReady = (): void => {
-    isVisible.value = true
     if (!props.disableParallax) {
+      onScroll()
       window.addEventListener('scroll', onScroll, { passive: true })
       window.addEventListener('resize', onResize, { passive: true })
-      onScroll()
     }
+    isVisible.value = true
   }
 
   const preload = new Image()
@@ -129,10 +129,12 @@ onUnmounted((): void => {
 
 .parallax-img {
   position: absolute;
-  top: -50%;
+  top: -50vh;
+  top: -50lvh;
   left: 0;
   width: 100%;
-  height: 200%;
+  height: 200vh;
+  height: 200lvh;
   object-fit: cover;
   will-change: transform;
 }

@@ -17,7 +17,7 @@ useViewBackground({
 <template>
   <div>
     <h1
-      class="text-2xl sm:text-4xl md:text-5xl font-semibold tracking-[0.4em] animate-terminal-flicker uppercase"
+      class="text-xl sm:text-4xl md:text-5xl font-semibold tracking-[0.4em] animate-terminal-flicker uppercase"
     >
       {{ $t('credits') }}
     </h1>
