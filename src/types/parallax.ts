@@ -5,7 +5,12 @@ export type ParallaxType =
   | 'scroll-opacity'
   | 'scale-opacity'
 
-export type ImageSize = 'cover' | 'contain' | 'auto' | `${number}px` | `${number}%`
+export type ImageSize =
+  | 'cover'
+  | 'contain'
+  | 'auto'
+  | `${number}px`
+  | `${number}%`
 
 export type ImagePosition =
   | 'center'
@@ -26,10 +31,12 @@ export interface ParallaxOptions {
   imageSrc: string
 
   /**
-   * Parallax effect speed. Provide numbers from -1.0 to 2.0
+   * Parallax effect speed (mobile). Provide numbers from -1.0 to 2.0
    * @default 0.5
    */
   speed?: number
+  /** Speed override from 768 px (Tailwind md) */
+  mdSpeed?: number
 
   /**
    * Type of parallax effect
@@ -84,10 +91,12 @@ export interface ParallaxOptions {
   overlayColor?: string
 
   /**
-   * Initial vertical offset in pixels (positive = start lower, negative = start higher)
+   * Initial vertical offset in pixels (mobile, positive = start lower, negative = start higher)
    * @default 0
    */
   initialOffset?: number
+  /** initialOffset override from 768 px (Tailwind md) */
+  mdInitialOffset?: number
 
   /**
    * Image scale factor. Values < 1 zoom out, > 1 zoom in

@@ -12,7 +12,7 @@ const setRef = (el: Element | null) => {
         observer.disconnect()
       }
     },
-    { rootMargin: '0px 0px 300px 0px', threshold: 0 },
+    { rootMargin: '0px 0px 300px 0px', threshold: 0 }
   )
   observer.observe(el)
 }

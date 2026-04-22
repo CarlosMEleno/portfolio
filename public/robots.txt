@@ -1,0 +1,11 @@
+# robots.txt — Dormant Sounds
+# https://dormantsounds.com
+
+User-agent: *
+Allow: /
+
+# La sección /redacted es contenido reservado — no indexar
+Disallow: /redacted
+
+# Sitemap
+Sitemap: https://dormantsounds.com/sitemap.xml

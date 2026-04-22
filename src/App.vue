@@ -14,18 +14,32 @@ const { currentMaxWidth } = useMainWidth()
   <div class="flex flex-col min-h-screen relative">
     <!-- Parallax Background -->
     <ParallaxBackground
-v-if="currentBackground" :key="currentBackground.imageSrc"
-      :image-src="currentBackground.imageSrc" :speed="currentBackground.speed" :type="currentBackground.type"
-      :img-size="currentBackground.imgSize" :img-position="currentBackground.imgPosition"
-      :img-repeat="currentBackground.imgRepeat" :keep-img="currentBackground.keepImg"
-      :z-index="currentBackground.zIndex" :disable-parallax="currentBackground.disableParallax"
-      :container-class="currentBackground.containerClass" :overlay-color="currentBackground.overlayColor"
-      :initial-offset="currentBackground.initialOffset" :scale="currentBackground.scale" />
+      v-if="currentBackground"
+      :key="currentBackground.imageSrc"
+      :image-src="currentBackground.imageSrc"
+      :speed="currentBackground.speed"
+      :md-speed="currentBackground.mdSpeed"
+      :type="currentBackground.type"
+      :img-size="currentBackground.imgSize"
+      :img-position="currentBackground.imgPosition"
+      :img-repeat="currentBackground.imgRepeat"
+      :keep-img="currentBackground.keepImg"
+      :z-index="currentBackground.zIndex"
+      :disable-parallax="currentBackground.disableParallax"
+      :container-class="currentBackground.containerClass"
+      :overlay-color="currentBackground.overlayColor"
+      :initial-offset="currentBackground.initialOffset"
+      :md-initial-offset="currentBackground.mdInitialOffset"
+      :scale="currentBackground.scale"
+    />
 
     <Header />
 
     <main class="w-full px-4 flex-grow relative z-10">
-      <div class="mx-auto py-8 sm:py-12 lg:py-16 transition-[max-width] duration-300" :class="currentMaxWidth">
+      <div
+        class="mx-auto px-4 py-8 sm:py-12 lg:py-16 transition-[max-width] duration-300"
+        :class="currentMaxWidth"
+      >
         <router-view />
       </div>
     </main>

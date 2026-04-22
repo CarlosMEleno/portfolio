@@ -38,12 +38,13 @@ h2 {
   font-family: var(--font-astron);
 }
 
-p, ul, li {
+p,
+ul,
+li {
   font-family: var(--font-nunito-sans);
   font-weight: 300;
   font-size: 20px;
 }
-
 
 @keyframes terminal-flicker {
   0% {

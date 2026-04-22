@@ -2,7 +2,10 @@
 export type LanguageCode = 'en' | 'es'
 
 /** Array of supported language codes */
-export const SUPPORTED_LANGUAGES: readonly LanguageCode[] = ['en', 'es'] as const
+export const SUPPORTED_LANGUAGES: readonly LanguageCode[] = [
+  'en',
+  'es',
+] as const
 
 /** Default language code */
 export const DEFAULT_LANGUAGE: LanguageCode = 'en'

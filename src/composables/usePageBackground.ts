@@ -1,4 +1,12 @@
-import { ref, readonly, onMounted, onUnmounted, nextTick, type DeepReadonly, type Ref } from 'vue'
+import {
+  ref,
+  readonly,
+  onMounted,
+  onUnmounted,
+  nextTick,
+  type DeepReadonly,
+  type Ref,
+} from 'vue'
 import type { ParallaxOptions } from '../types/parallax'
 
 // Estado reactivo global para el background actual

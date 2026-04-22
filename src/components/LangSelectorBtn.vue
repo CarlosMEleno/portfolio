@@ -12,9 +12,15 @@ const { locale } = useI18n()
       <span v-if="index > 0" class="text-white/20 select-none">·</span>
       <button
         class="text-xs uppercase tracking-widest transition-colors duration-200 cursor-pointer"
-        :class="locale === lang.code ? 'text-white' : 'text-white/35 hover:text-white/65'"
+        :class="
+          locale === lang.code
+            ? 'text-white'
+            : 'text-white/35 hover:text-white/65'
+        "
         @click="changeLang(lang.code)"
-      >{{ lang.code }}</button>
+      >
+        {{ lang.code }}
+      </button>
     </template>
   </div>
 </template>

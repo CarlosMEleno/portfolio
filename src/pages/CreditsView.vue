@@ -6,39 +6,42 @@ const { useViewBackground } = usePageBackground()
 
 useViewBackground({
   imageSrc: creditsImg,
-  speed: 4.6,
+  speed: 1.5,
+  mdSpeed: 3.6,
+  initialOffset: 330,
+  mdInitialOffset: 340,
   type: 'scroll',
+  imgPosition: 'top',
   imgSize: 'cover',
-  //imgPosition: 'top',
-  initialOffset: 390,
-  scale: 1,
 })
 </script>
 
 <template>
   <div>
-    <h1 class="text-5xl font-semibold tracking-[0.4em] animate-terminal-flicker uppercase">
+    <h1
+      class="text-2xl sm:text-4xl md:text-5xl font-semibold tracking-[0.4em] animate-terminal-flicker uppercase"
+    >
       {{ $t('credits') }}
     </h1>
 
-    <div class="mt-20 bg-black/30 p-6 animate-terminal-flicker animation-delay-300 space-y-8">
-
+    <div
+      class="mt-8 md:mt-20 bg-black/30 p-6 animate-terminal-flicker animation-delay-300 space-y-8"
+    >
       <!-- DISCOGRAFÍA -->
       <section>
-        <h3 class="credits-heading">DISCOGRAFÍA</h3>
+        <h3 class="credits-heading">{{ $t('credits.discography-title') }}</h3>
         <ul class="credits-list mt-4">
-          <li>Linvega</li>
+          <li>{{ $t('credits.discography-linvega') }}</li>
           <li>
-            <span>Otros proyectos</span>
+            <span>{{ $t('credits.discography-other-projects') }}</span>
             <ul class="credits-sublist mt-2">
-              <li>Sanakjan - WarCrime Waifu (PURE HATE 000 - A DISTANT HOWL VA)</li>
+              <li>{{ $t('credits.discography-sanakjan') }}</li>
             </ul>
           </li>
           <li>
-            <span>Colaboraciones</span>
+            <span>{{ $t('credits.discography-collaborations') }}</span>
             <ul class="credits-sublist mt-2">
-              <li>Garrote - A Love Letter to Salvador Puig Antich (DEATHBED TAPES - Die Destruktion VA) [con Komossas]
-              </li>
+              <li>{{ $t('credits.discography-garrote') }}</li>
             </ul>
           </li>
         </ul>
@@ -46,36 +49,47 @@ useViewBackground({
 
       <!-- BANDA SONORA -->
       <section>
-        <h3 class="credits-heading">BANDA SONORA</h3>
+        <h3 class="credits-heading">{{ $t('credits.soundtrack-title') }}</h3>
         <div class="mt-4 space-y-6">
           <div class="">
-            <p class="font-semibold">Those Who Wander</p>
-            <p class="!text-[17px]">Dir: Adrián González Fernández "Disso"</p>
-            <p class="!text-[17px]">Banda Sonora Original, Diseño Sonoro</p>
-            <a href="https://www.youtube.com/watch?v=rmHXOcQxVOE" target="_blank" rel="noopener noreferrer"
-              class="credits-link">https://www.youtube.com/watch?v=rmHXOcQxVOE</a>
+            <p class="font-semibold">{{ $t('credits.soundtrack-1-name') }}</p>
+            <p class="!text-[17px]">
+              {{ $t('credits.soundtrack-1-director') }}
+            </p>
+            <p class="!text-[17px]">{{ $t('credits.soundtrack-1-role') }}</p>
+            <a
+              href="https://www.youtube.com/watch?v=rmHXOcQxVOE"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="credits-link"
+              >https://www.youtube.com/watch?v=rmHXOcQxVOE</a
+            >
           </div>
 
           <div class="">
-            <p class="font-semibold">PLANES, HUECOS II Festival de Cortos Pelabravo Express</p>
-            <p class="!text-[17px]">Grupo: La Zarrampla</p>
-            <p class="!text-[17px]">Banda Sonora, Grabación y Diseño Sonoros</p>
-            <a href="https://www.youtube.com/watch?v=7DbQNOJ_l4g&t=1s" target="_blank" rel="noopener noreferrer"
-              class="credits-link">https://www.youtube.com/watch?v=7DbQNOJ_l4g&t=1s</a>
+            <p class="font-semibold">{{ $t('credits.soundtrack-2-name') }}</p>
+            <p class="!text-[17px]">{{ $t('credits.soundtrack-2-group') }}</p>
+            <p class="!text-[17px]">{{ $t('credits.soundtrack-2-role') }}</p>
+            <a
+              href="https://www.youtube.com/watch?v=7DbQNOJ_l4g&t=1s"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="credits-link"
+              >https://www.youtube.com/watch?v=7DbQNOJ_l4g&t=1s</a
+            >
           </div>
         </div>
       </section>
 
       <!-- SONIDO - DISEÑO SONORO -->
       <section>
-        <h3 class="credits-heading">SONIDO - DISEÑO SONORO</h3>
+        <h3 class="credits-heading">{{ $t('credits.sound-design-title') }}</h3>
         <div class="mt-4">
-          <p class="font-semibold">PLANES, HUECOS</p>
-          <p>II Festival de Cortos Pelabravo Express</p>
-          <p>Grabación y Diseño Sonoros</p>
+          <p class="font-semibold">{{ $t('credits.sound-1-name') }}</p>
+          <p>{{ $t('credits.sound-1-event') }}</p>
+          <p>{{ $t('credits.sound-1-role') }}</p>
         </div>
       </section>
-
     </div>
   </div>
 </template>

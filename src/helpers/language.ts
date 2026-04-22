@@ -1,6 +1,11 @@
 import { readCookie, setPermanentCookie } from '../services/cookie_helper'
 import { useI18nInstance } from '../services/i18n'
-import { type LanguageCode, SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, isLanguageCode } from '../types/language'
+import {
+  type LanguageCode,
+  SUPPORTED_LANGUAGES,
+  DEFAULT_LANGUAGE,
+  isLanguageCode,
+} from '../types/language'
 
 /**
  * Evaluate and return the user's preferred language

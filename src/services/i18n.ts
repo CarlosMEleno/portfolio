@@ -21,7 +21,9 @@ let i18n: Translator | undefined = undefined
  */
 function useI18nInstance(): Translator {
   if (i18n === undefined) {
-    throw new Error('i18n instance not initialized. Call setI18nInstance first.')
+    throw new Error(
+      'i18n instance not initialized. Call setI18nInstance first.'
+    )
   }
   return i18n
 }

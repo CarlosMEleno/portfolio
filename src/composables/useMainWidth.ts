@@ -1,4 +1,11 @@
-import { ref, readonly, onMounted, onUnmounted, type DeepReadonly, type Ref } from 'vue'
+import {
+  ref,
+  readonly,
+  onMounted,
+  onUnmounted,
+  type DeepReadonly,
+  type Ref,
+} from 'vue'
 
 const DEFAULT_MAX_WIDTH = 'max-w-[800px]'
 
