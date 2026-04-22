@@ -1,24 +1,113 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dormant Sounds</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dormant Sounds</title>
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload local fonts -->
+    <link
+      rel="preload"
+      href="/fonts/astron/Astron-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
-  <!-- Preload local fonts -->
-  <link rel="preload" href="/fonts/astron/Astron-Regular.woff2" as="font" type="font/woff2" crossorigin />
-  <script type="module" crossorigin src="/assets/index-BfCfENp_.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Deyuuije.css">
+    <!-- Google Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://dormantsounds.com/#website",
+            "name": "Dormant Sounds",
+            "url": "https://dormantsounds.com",
+            "description": "Dossier audiovisual de Carlos Martínez Eleno. Composición original, diseño sonoro y ficción experimental.",
+            "inLanguage": ["es", "en"],
+            "author": { "@id": "https://dormantsounds.com/#person" },
+            "hasPart": [
+              {
+                "@type": "WebPage",
+                "@id": "https://dormantsounds.com/#home",
+                "url": "https://dormantsounds.com/",
+                "name": "Dormant Sounds — Home",
+                "description": "Vibrations from beneath."
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://dormantsounds.com/#audio",
+                "url": "https://dormantsounds.com/audio",
+                "name": "Audio — Dormant Sounds",
+                "description": "Composiciones originales, diseño sonoro y producción musical.",
+                "about": {
+                  "@type": "MusicAlbum",
+                  "byArtist": { "@id": "https://dormantsounds.com/#person" }
+                }
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://dormantsounds.com/#video",
+                "url": "https://dormantsounds.com/video",
+                "name": "Video — Dormant Sounds",
+                "description": "Bandas sonoras originales y diseño sonoro para proyectos audiovisuales."
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://dormantsounds.com/#credits",
+                "url": "https://dormantsounds.com/credits",
+                "name": "Créditos — Dormant Sounds",
+                "description": "Discografía, bandas sonoras y créditos de diseño sonoro."
+              },
+              {
+                "@type": "ProfilePage",
+                "@id": "https://dormantsounds.com/#contact",
+                "url": "https://dormantsounds.com/contact",
+                "name": "Contacto — Dormant Sounds",
+                "description": "Sobre Carlos Martínez Eleno: compositor, diseñador sonoro y guionista.",
+                "mainEntity": { "@id": "https://dormantsounds.com/#person" }
+              }
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://dormantsounds.com/#person",
+            "name": "Carlos Martínez Eleno",
+            "url": "https://dormantsounds.com/contact",
+            "email": "carlosmeleno99@gmail.com",
+            "jobTitle": "Compositor y Diseñador Sonoro",
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "Universidad Pontificia de Salamanca"
+            },
+            "knowsAbout": [
+              "Diseño Sonoro",
+              "Composición Musical",
+              "Producción Audiovisual",
+              "Guión Cinematográfico",
+              "Ficción Híbrida"
+            ],
+            "sameAs": [
+              "https://linvega.bandcamp.com/",
+              "https://soundcloud.com/linvega_sai14",
+              "https://www.instagram.com/8zymandias/"
+            ]
+          }
+        ]
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-5bqHfDPI.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D9b9IYlz.css">
+    <link rel="preload" href="/assets/home-C19Z4p3j.jpg" as="image" type="image/jpeg" />
 </head>
 
-<body>
-  <main id="app"></main>
-</body>
-
+  <body>
+    <main id="app"></main>
+  </body>
 </html>
