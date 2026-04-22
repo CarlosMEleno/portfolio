@@ -12,11 +12,9 @@ useViewBackground({
   imageSrc: homeimg,
   speed: 2,
   mdSpeed: 3.2,
-  type: 'scroll',
-  imgSize: 'cover',
-  imgPosition: 'top',
   initialOffset: 300,
   mdInitialOffset: 340,
+  type: 'scroll',
   scale: 1, // Menos zoom (más alejado)
 })
 </script>

@@ -11,8 +11,6 @@ useViewBackground({
   initialOffset: 330,
   mdInitialOffset: 340,
   type: 'scroll',
-  imgPosition: 'top',
-  imgSize: 'cover',
 })
 </script>
 

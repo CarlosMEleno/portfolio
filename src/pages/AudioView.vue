@@ -19,8 +19,6 @@ useViewBackground({
   initialOffset: 300,
   mdInitialOffset: 350,
   type: 'scroll',
-  imgPosition: 'top',
-  imgSize: 'cover',
 })
 
 const moveToFirstAudioSectionElement = () => {
