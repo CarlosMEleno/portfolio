@@ -111,14 +111,15 @@ const onBlackoutEnd = () => {
       </form>
 
       <div
-        class="mt-10 animate-terminal-flicker font-['Times_New_Roman',_Times,_serif] text-white"
+        class="mt-14 text-white animate-pulse"
+        style="animation-duration: 1.2s"
       >
-        <p class="!text-[16px]">
+        <p class="!text-[18px] !font-eb-garamond">
           "This door seems locked. You can hear rumbling coming from the other
           side"
         </p>
-        <p class="my-0.5 !text-[16px]">*</p>
-        <p class="!text-[16px]">
+        <p class="my-0.5 !text-[18px] !font-eb-garamond">*</p>
+        <p class="!text-[18px] !font-eb-garamond">
           "La puerta parece cerrada con llave. Puedes oír un retumbar
           proveniente del otro lado"
         </p>
@@ -145,46 +146,57 @@ const onBlackoutEnd = () => {
     transform: translateX(0) rotate(0deg) scale(1);
     opacity: 1;
   }
+
   6% {
     transform: translateX(-6px) rotate(-1.5deg) scale(0.97);
     opacity: 0.4;
   }
+
   12% {
     transform: translateX(5px) rotate(1deg) scale(1.02);
     opacity: 0.9;
   }
+
   18% {
     transform: translateX(-4px) rotate(-2deg) scale(0.96);
     opacity: 0.2;
   }
+
   25% {
     transform: translateX(7px) rotate(0.5deg) scale(1.01);
     opacity: 1;
   }
+
   32% {
     transform: translateX(-5px) rotate(-1deg) scale(0.98);
     opacity: 0.3;
   }
+
   40% {
     transform: translateX(4px) rotate(2deg) scale(1);
     opacity: 0.85;
   }
+
   50% {
     transform: translateX(-3px) rotate(-0.5deg) scale(0.99);
     opacity: 0.15;
   }
+
   60% {
     transform: translateX(2px) rotate(1deg) scale(1);
     opacity: 0.7;
   }
+
   72% {
     transform: translateX(-1px) rotate(0deg) scale(1);
     opacity: 0.4;
   }
+
   85% {
     transform: translateX(1px) rotate(0.5deg) scale(1);
     opacity: 0.6;
   }
+
   100% {
     transform: translateX(0) rotate(0deg) scale(1);
     opacity: 1;

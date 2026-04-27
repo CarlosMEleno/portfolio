@@ -2,7 +2,7 @@ export default {
   'fake-text': 'Texto de prueba',
 
   // Títulos globales de página
-  contact: 'CONTACTO',
+  contact: 'CONTACTO / SOBRE MÍ',
   video: 'VIDEO',
   credits: 'CRÉDITOS',
 
@@ -12,14 +12,14 @@ export default {
   'nav.video': 'VIDEO',
   'nav.credits': 'CRÉDITOS',
   'nav.redacted': 'REDACTED',
-  'nav.contact': 'CONTACTO',
+  'nav.contact': 'CONTACTO / SOBRE MÍ',
 
   // Página de inicio
   'home.title': 'DORMANT SOUNDS',
   'home.subtitle': 'VIBRATIONS FROM BENEATH',
   'home.listen': 'ESCUCHAR',
-  'home.tagline-1': "DON'T GO TOO FAR.",
-  'home.tagline-2': 'ALWAYS FOLLOW THE SIGNALS.',
+  'home.tagline-1': 'NO SE ALEJE MUCHO.',
+  'home.tagline-2': 'SIGA SIEMPRE LAS SEÑALES.',
 
   // Página de contacto
   'contact.who-title': '¿Quién soy?',
@@ -71,6 +71,13 @@ Recuerde que todo lo que observe aquí es material clasificado. La Corporación 
   'credits.sound-1-name': 'PLANES, HUECOS',
   'credits.sound-1-event': 'II Festival de Cortos Pelabravo Express',
   'credits.sound-1-role': 'Grabación y Diseño Sonoros',
+  'credits.live-title': 'EN VIVO',
+  'credits.live-1-name':
+    'Performance audiovisual y musical en vivo mediante intervención de señal',
+  'credits.live-1-event': 'Filmoteca de Castilla y León',
+  'credits.live-1-role':
+    'Exposición Collage animado. De la prehistoria al Gif. Mujeres y creación en la II Guerra Mundial.',
+  'credits.live-1-date': '11 y 12 mayo, 2024',
 
   // Página Audio
   'audio.title': 'Audio',
@@ -84,42 +91,6 @@ Recuerde que todo lo que observe aquí es material clasificado. La Corporación 
   'audio.featured-title': 'Proyectos destacados',
   'audio.featured-description':
     'Una selección de trabajos recientes que abarcan composición cinematográfica, producción electrónica y diseño sonoro experimental.',
-
-  'audio.track-1-title': 'Threshold',
-  'audio.track-1-year': '2024',
-  'audio.track-1-genre': 'Cinematográfico / Orquestal',
-  'audio.track-1-desc':
-    'Una pieza orquestal construida en torno a la tensión y la resolución. Escrita para un cortometraje que explora el aislamiento y la reconexión.',
-
-  'audio.track-2-title': 'Mara',
-  'audio.track-2-year': '2024',
-  'audio.track-2-genre': 'Electrónico / Ambient',
-  'audio.track-2-desc':
-    'Una pista ambient de construcción lenta con grabaciones de campo en entornos costeros. Publicada como parte de un EP independiente.',
-
-  'audio.track-3-title': 'Pulse & Decay',
-  'audio.track-3-year': '2023',
-  'audio.track-3-genre': 'Diseño Sonoro',
-  'audio.track-3-desc':
-    'Diseñada para una instalación interactiva. La pieza responde en tiempo real al movimiento de los visitantes, evolucionando a través de seis estados distintos.',
-
-  'audio.track-4-title': 'Before Light',
-  'audio.track-4-year': '2023',
-  'audio.track-4-genre': 'Piano / Minimalismo',
-  'audio.track-4-desc':
-    'Una composición para piano solo en la tradición minimalista. Grabada en directo en una única toma, conservando la ambientación de la sala.',
-
-  'audio.track-5-title': 'Low Infrastructure',
-  'audio.track-5-year': '2022',
-  'audio.track-5-genre': 'Industrial / Experimental',
-  'audio.track-5-desc':
-    'Construida íntegramente a partir de grabaciones procesadas de maquinaria industrial. Explora el ritmo y la melodía ocultos en el ruido mecánico.',
-
-  'audio.track-6-title': 'Dusk Protocol',
-  'audio.track-6-year': '2022',
-  'audio.track-6-genre': 'Synth / Retrofuturismo',
-  'audio.track-6-desc':
-    'Una pieza de síntesis retrofuturista inspirada en la música informática temprana y la síntesis analógica. Densa, cálida y rítmicamente compleja.',
 
   'audio.process-title': 'Proceso',
   'audio.process-p1':
@@ -159,10 +130,13 @@ La recuperación/archivado de estos materiales sonoros refleja nuestra convicci�
 <br><br><br>
 Oír para creer.`,
 
-  'audio.entry-1-data': `<span class="font-bold text-[19px]">Mu Arae (HD 160691) "Cervantes"</span><br><br><span class="font-bold">Constelación</span> Ara<br><span class="font-bold">Ascensión Recta</span> 17h 44m 08.70s<br><span class="font-bold">Declinación</span> −51° 50′ 02.6″<br><span class="font-bold line-through">Aparente</span> Magnitud 5.15<br><span class="font-bold">Distancia (al)</span> 51<br><span class="font-bold">Tipo Espectral</span> G3IV-V<br><span class="font-bold">Masa (Masas Solares)</span> 1.077<br><span class="font-bold">Temperatura (K)</span> 5704<br><span class="font-bold">Edad (Gyr)</span> 6.413<br><span class="font-bold">Planetas Confirmados (sin confirmar)</span> 4<br>`,
+  'audio.entry-1-data': `<span class="font-bold text-[19px]">Mu Arae (HD 160691) "Cervantes"</span><br><br><span class="font-bold">Constelación</span> Ara<br><span class="font-bold">Ascensión Recta</span> 17h 44m 08.70s<br><span class="font-bold">Declinación</span> −51° 50′ 02.6″<br><span class="font-bold line-through">Magnitud</span> Aparante 5.15<br><span class="font-bold">Distancia (al)</span> 51<br><span class="font-bold">Tipo Espectral</span> G3IV-V<br><span class="font-bold">Masa (Masas Solares)</span> 1.077<br><span class="font-bold">Temperatura (K)</span> 5704<br><span class="font-bold">Edad (Gyr)</span> 6.413<br><span class="font-bold">Planetas Confirmados (sin confirmar)</span> 4<br>`,
   'audio.entry-1-title': 'Traversing the Ecumen Refinery',
-  'audio.entry-1-desc': `Los cuatro planetas del sistema, conocidos como c, d, b, e (de más cercano a más lejano de la estrella), también conocidos respectivamente como Dulcinea, Rocinante, Quijote y Sancho.<br><br>El planeta b (Quijote) alberga una refinería y estación de procesamiento de los materiales principales de la estrella (hierro y helio). Quijote, a pesar de ser un gigante gaseoso, posee una luna sólida denominada "Dorotea". Es aquí donde la Compañía Ecumen estableció su mayor refinería hasta la fecha, conocida como "Barataria 2", llamada entre la clase trabajadora "la horca". No se han encontrado registros públicos sobre el motivo de denominar a Barataria como segunda (2), ni de una hipotética Barataria 1 previa.`,
+  'audio.entry-1-desc': `Los cuatro planetas del sistema, conocidos como c, d, b, e (de más cercano a más lejano de la estrella), también conocidos respectivamente como Dulcinea, Rocinante, Quijote y Sancho.<br><br>El planeta b (Quijote) alberga una refinería y estación de procesamiento de los materiales principales de la estrella (hierro y helio). Quijote, a pesar de ser un gigante gaseoso, posee una luna sólida denominada "Dorotea". Es aquí donde la Compañía Ecumen estableció su mayor refinería hasta la fecha, conocida como "Barataria 2", llamada entre la clase trabajadora "las galeras". No se han encontrado registros públicos sobre el motivo de denominar a Barataria como segunda (2), ni de una hipotética Barataria 1 previa.`,
 
   'audio.entry-2-title': 'Test Signal — Archivo 002',
   'audio.entry-2-desc': `Grabación de uno de los primeros intentos registrados de Transporte de Materiales en Tiempo Cero. La antigüedad de la grabación dificulta su datación, a la par que explica que la transición entre espacios realizada por el dispositivo de grabación no sea instantánea, sino una especie de fundido (véase hundimiento). El aspecto más llamativo de la grabación es el entorno al que el dispositivo es transportado. Basándonos en el registro sonoro, parece tratarse de un espacio de clase Sears-Lombarde no registrado, pese a discrepancias por parte de <span class="tracking-[-0.015em]">█████</span> <span class="tracking-[-0.015em]">████████</span> y <span class="tracking-[-0.015em]">███ ██████</span>, debido a evidencias de manipulación por parte de <span class="tracking-[-0.015em]">██ ████████ ██████</span>. Dataciones posteriores llevadas a cabo mediante <span class="tracking-[-0.015em]">███████ ████████ ████ ████ ██████ ██ ██ ██████ █████</span> (Oshkosh, Wisconsin).`,
+
+  'audio.entry-3-title': 'Under the scorching 01 Chanai',
+  'audio.entry-3-desc': `01 Chanai: Enana Roja de tipo M0. En la órbita más cercana a ésta estrella se encuentra el planeta <span class="italic">harq alqadamayn</span>, en ocasiones acortado a <span class="italic">haraq</span> ó <span class="italic">Ḥaraqān</span>. Este planeta, otrora inhabitable debido a la extrema cercanía con su estrella se encuentra escasamente poblado por un culto religioso extendido a lo largo de todo el <span class="italic">AN</span>, conocidos coloquialmente como <span class="italic">mughataat bialmalabis</span> (Cubierto con ropa), pese a que ésta no es la forma en la que se refieren a sí mismos. <br><br>Precisamente, es la peregrinación a este hostil planeta el objetivo principal de estos creyentes, seguida por una caminata de 41 días a través de su árido paisaje, bajo el indescriptible calor y cegadora luz emitidos por 01 Chanai, <span class="italic">daw' ghadib</span> para los devotos.<br><br>Esta ardua tarea sería totalmente impensable si no fuese por la invención más reconocida e influyente de éste pueblo, y por la que reciben su coloquial nombre: <span class="italic">einaq almusafir</span>, ó “abrazo del caminante” es una prenda formada por varias capas de tejidos y materiales aislantes apilados unos sobre otros, cubriendo la totalidad del cuerpo de su usuario, dándoles una apariencia de “solemnes montículos”, caminando normalmente en parejas o grupos de tres, por la superficie de éste mundo estéril. <br><br>Muchos otros grupos y compañías han tratado de replicar la tecnología de estos ropajes con diferentes grados de éxito, ya que los secretos y detalles de su confección son celosamente guardados por este pueblo. Esto ha dado lugar a desafortunados incidentes, principalmente motivados por la arrogancia de terceros, los cuales habitualmente terminan en calcinación inmediatamente tras abandonar la protección de las naves que allí aterrizan.<br><br>No obstante, los <span class="italic">mughataat bialmalabis</span> no son una cultura hermética y a menudo sus contribuciones han aportado grandes avances al desarrollo de la humanidad a lo largo del <span class="italic">AN</span>. Son bien conocidos sus avances en los campos de la cartografía estelar, prevención antimemética (todavía en investigación) y el ya mencionado desarrollo de tecnología de aislamiento térmico, la cual es utilizada de múltiples formas a lo largo de todo el espacio conocido.`,
 }

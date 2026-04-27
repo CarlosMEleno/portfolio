@@ -24,18 +24,13 @@ useViewBackground({
 
 <template>
   <div>
-    <h1
-      class="!text-xl sm:!text-4xl md:!text-5xl font-semibold tracking-[0.4em] animate-terminal-flicker uppercase"
-    >
-      {{ $t('contact') }}
-    </h1>
     <div
-      class="mt-10 flex flex-col md:flex-row animate-terminal-flicker animation-delay-300 !text-justify"
+      class="flex flex-col md:flex-row animate-terminal-flicker animation-delay-300 !text-justify"
     >
-      <div class="md:mt-12 w-full md:w-4/6 md:pr-8">
-        <h2 class="!font-nunito-sans !text-[27px] font-bold">
+      <div class="w-full md:w-4/6 md:pr-8">
+        <h1 class="!font-nunito-sans !text-[27px] font-bold">
           {{ $t('contact.who-title') }}
-        </h2>
+        </h1>
         <h3 class="mt-6 !font-nunito-sans !text-[22px]">
           {{ $t('contact.name') }}
         </h3>
@@ -44,9 +39,7 @@ useViewBackground({
           v-html="$t('contact.bio')"
         ></p>
       </div>
-      <div
-        class="w-full md:w-2/6 mt-10 md:mt-12 flex flex-col gap-10 !text-right"
-      >
+      <div class="w-full md:w-2/6 mt-10 flex flex-col gap-10 !text-right">
         <div>
           <p class="!text-[19px] tracking-[0.3em] uppercase !font-bold mb-3">
             {{ $t('contact.email-label') }}
@@ -126,11 +119,21 @@ useViewBackground({
             {{ $t('contact.tfg-description') }}
           </p>
           <a
-            href="/tfg.pdf"
+            href="/resources/MARTÍNEZ_ELENO_CARLOS_TFG_2022 - 4 publicar DEF 1 col.pdf"
             download
-            class="inline-block bg-[rgba(248,240,222,0.4)] hover:bg-gray-300 hover:!text-black !text-white font-astron rounded-full px-6 py-1.5 text-sm transition-colors duration-200"
+            class="inline-block bg-[rgba(248,240,222,0.4)] hover:bg-gray-300 hover:!text-black font-astron rounded-full px-6 py-1.5 !text-[12px] transition-colors duration-200"
           >
-            {{ $t('contact.tfg-download') }}
+            <svg
+              viewBox="0 -2 30 30"
+              class="w-5 h-5 inline-block mr-2 fill-current"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M29,0 L1,0 C0.448,0 0,0.448 0,1 L0,9 C0,9.553 0.448,10 1,10 C1.552,10 2,9.553 2,9 L2,2 L28,2 L28,9 C28,9.553 28.448,10 29,10 C29.552,10 30,9.553 30,9 L30,1 C30,0.447 29.552,0 29,0 Z M19.267,18.3 L16,22.26 L16,8.002 C16,7.449 15.552,7 15,7 C14.448,7 14,7.449 14,8.002 L14,22.298 L10.702,18.3 C10.31,17.905 9.674,17.905 9.282,18.3 C8.89,18.693 8.89,19.332 9.282,19.726 L14.224,25.717 C14.433,25.927 14.71,26.017 14.984,26.002 C15.258,26.017 15.536,25.927 15.745,25.717 L20.687,19.726 C21.079,19.332 21.079,18.693 20.687,18.3 C20.295,17.905 19.659,17.905 19.267,18.3 Z"
+              />
+            </svg>
+            <span>{{ $t('contact.tfg-download') }}</span>
           </a>
         </div>
       </div>

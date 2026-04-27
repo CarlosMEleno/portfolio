@@ -35,8 +35,10 @@ export interface ParallaxOptions {
    * @default 0.5
    */
   speed?: number
-  /** Speed override from 768 px (Tailwind md) */
+  /** Speed override from 768 px (Tailwind md). Falls back to speed if undefined. */
   mdSpeed?: number
+  /** Speed override from 1024 px (Tailwind lg). Falls back to mdSpeed, then speed if undefined. */
+  lgSpeed?: number
 
   /**
    * Type of parallax effect
@@ -95,8 +97,10 @@ export interface ParallaxOptions {
    * @default 0
    */
   initialOffset?: number
-  /** initialOffset override from 768 px (Tailwind md) */
+  /** initialOffset override from 768 px (Tailwind md). Falls back to initialOffset if undefined. */
   mdInitialOffset?: number
+  /** initialOffset override from 1024 px (Tailwind lg). Falls back to mdInitialOffset, then initialOffset if undefined. */
+  lgInitialOffset?: number
 
   /**
    * Image scale factor. Values < 1 zoom out, > 1 zoom in

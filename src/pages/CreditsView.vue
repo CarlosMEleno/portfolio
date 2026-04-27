@@ -7,9 +7,11 @@ const { useViewBackground } = usePageBackground()
 useViewBackground({
   imageSrc: creditsImg,
   speed: 1.5,
-  mdSpeed: 3.6,
+  mdSpeed: 2.8,
+  lgSpeed: 4.4,
   initialOffset: 330,
   mdInitialOffset: 340,
+  lgInitialOffset: 420,
   type: 'scroll',
 })
 </script>
@@ -83,9 +85,24 @@ useViewBackground({
       <section>
         <h3 class="credits-heading">{{ $t('credits.sound-design-title') }}</h3>
         <div class="mt-4">
-          <p class="font-semibold">{{ $t('credits.sound-1-name') }}</p>
-          <p>{{ $t('credits.sound-1-event') }}</p>
-          <p>{{ $t('credits.sound-1-role') }}</p>
+          <p class="font-semibold !text-[17px]">
+            {{ $t('credits.sound-1-name') }}
+          </p>
+          <p class="!text-[17px]">{{ $t('credits.sound-1-event') }}</p>
+          <p class="!text-[17px]">{{ $t('credits.sound-1-role') }}</p>
+        </div>
+      </section>
+
+      <!-- EN VIVO -->
+      <section>
+        <h3 class="credits-heading">{{ $t('credits.live-title') }}</h3>
+        <div class="mt-4">
+          <p class="font-semibold !text-[17px]">
+            {{ $t('credits.live-1-name') }}
+          </p>
+          <p class="!text-[17px]">{{ $t('credits.live-1-event') }}</p>
+          <p class="!text-[17px]">{{ $t('credits.live-1-role') }}</p>
+          <p class="!text-[17px]">{{ $t('credits.live-1-date') }}</p>
         </div>
       </section>
     </div>

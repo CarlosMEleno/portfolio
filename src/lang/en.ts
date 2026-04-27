@@ -2,7 +2,7 @@ export default {
   'fake-text': 'Test text',
 
   // Global page titles
-  contact: 'CONTACT',
+  contact: 'CONTACT / ABOUT ME',
   video: 'VIDEO',
   credits: 'CREDITS',
 
@@ -12,7 +12,7 @@ export default {
   'nav.video': 'VIDEO',
   'nav.credits': 'CREDITS',
   'nav.redacted': 'REDACTED',
-  'nav.contact': 'CONTACT',
+  'nav.contact': 'CONTACT / ABOUT ME',
 
   // Home page
   'home.title': 'DORMANT SOUNDS',
@@ -71,6 +71,13 @@ Remember that everything you observe here is classified material. The Corporatio
   'credits.sound-1-name': 'PLANES, HUECOS',
   'credits.sound-1-event': 'II Pelabravo Express Short Film Festival',
   'credits.sound-1-role': 'Recording and Sound Design',
+  'credits.live-title': 'LIVE PERFORMANCE',
+  'credits.live-1-name':
+    'Live audiovisual and musical performance through signal intervention',
+  'credits.live-1-event': 'Filmoteca de Castilla y León',
+  'credits.live-1-role':
+    'Exhibition "Collage animado. De la prehistoria al Gif. Mujeres y creación en la II Guerra Mundial."',
+  'credits.live-1-date': 'May 11 and 12, 2024',
 
   // Audio page
   'audio.title': 'Audio',
@@ -84,42 +91,6 @@ Remember that everything you observe here is classified material. The Corporatio
   'audio.featured-title': 'Featured projects',
   'audio.featured-description':
     'A selection of recent work spanning cinematic composition, electronic production, and experimental sound design.',
-
-  'audio.track-1-title': 'Threshold',
-  'audio.track-1-year': '2024',
-  'audio.track-1-genre': 'Cinematic / Orchestral',
-  'audio.track-1-desc':
-    'An orchestral piece built around tension and release. Written for a short film exploring themes of isolation and reconnection.',
-
-  'audio.track-2-title': 'Mara',
-  'audio.track-2-year': '2024',
-  'audio.track-2-genre': 'Electronic / Ambient',
-  'audio.track-2-desc':
-    'A slow-building ambient track layered with field recordings from coastal environments. Released as part of an independent EP.',
-
-  'audio.track-3-title': 'Pulse & Decay',
-  'audio.track-3-year': '2023',
-  'audio.track-3-genre': 'Sound Design',
-  'audio.track-3-desc':
-    'Designed for an interactive installation. The piece responds in real time to visitor movement, evolving through six distinct states.',
-
-  'audio.track-4-title': 'Before Light',
-  'audio.track-4-year': '2023',
-  'audio.track-4-genre': 'Piano / Minimalist',
-  'audio.track-4-desc':
-    'A solo piano composition in the minimalist tradition. Recorded live in a single take with room ambience preserved.',
-
-  'audio.track-5-title': 'Low Infrastructure',
-  'audio.track-5-year': '2022',
-  'audio.track-5-genre': 'Industrial / Experimental',
-  'audio.track-5-desc':
-    'Built entirely from processed recordings of industrial machinery. Explores rhythm and melody hidden inside mechanical noise.',
-
-  'audio.track-6-title': 'Dusk Protocol',
-  'audio.track-6-year': '2022',
-  'audio.track-6-genre': 'Synth / Retrofuturism',
-  'audio.track-6-desc':
-    'A retrofuturist synth piece inspired by early computer music and analog synthesis. Dense, warm, and rhythmically complex.',
 
   'audio.process-title': 'Process',
   'audio.process-p1':
@@ -165,4 +136,7 @@ Hear to believe.`,
 
   'audio.entry-2-title': 'Test Signal — Archivo 002',
   'audio.entry-2-desc': `Recording of one of the earliest documented attempts at Zero-Time Material Transportation. The age of the recording makes precise dating difficult, while also explaining why the transition between spaces performed by the recording device is not instantaneous, but rather a kind of fade (see sinking). The most striking aspect of the recording is the environment to which the device is transported. Based on the audio record, it appears to be an unregistered Sears-Lombarde class space, despite discrepancies raised by <span class="tracking-[-0.015em]">█████</span> <span class="tracking-[-0.015em]">████████</span> and <span class="tracking-[-0.015em]">███ ██████</span>, due to evidence of manipulation by <span class="tracking-[-0.015em]">██ ████████ ██████</span>. Subsequent dating carried out using <span class="tracking-[-0.015em]">███████ ████████ ████ ████ ██████ ██ ██ ██████ █████</span> (Oshkosh, Wisconsin).`,
+
+  'audio.entry-3-title': 'Under the scorching 01 Chanai',
+  'audio.entry-3-desc': `01 Chanai: M0-type red dwarf star. In the closest orbit to this star lies the planet <span class="italic">harq alqadamayn</span>, sometimes shortened to <span class="italic">haraq</span> or <span class="italic">Ḥaraqān</span>. This planet, once uninhabitable due to its extreme proximity to its star, is now sparsely populated by a religious cult spread throughout the <span class="italic">AN</span>, colloquially known as <span class="italic">mughataat bialmalabis</span> ("Clothed Ones"), although this is not the term they use for themselves.<br><br>Pilgrimage to this hostile world constitutes the central tenet of their belief system, followed by a 41-day traverse across its arid landscape, under the indescribable heat and blinding light emitted by 01 Chanai, referred to by devotees as <span class="italic">daw' ghadib</span>.<br><br>This ordeal would be entirely unthinkable without the most renowned and influential invention of these people—the very source of their colloquial name: The <span class="italic">einaq almusafir</span>, or "Walker's Embrace", is a garment composed of multiple layers of insulating fabrics and materials stacked upon one another, covering the wearer's entire body. This gives them the appearance of "solemn mounds" moving—typically in pairs or groups of three—across the surface of this sterile world.<br><br>Numerous groups and corporations have attempted to replicate the technology behind these garments with varying degrees of success, as the methods and details of their making are closely guarded. This has led to unfortunate incidents, primarily driven by third-party overconfidence, which often result in immediate incineration upon leaving the protection of landing vessels.<br><br>Nevertheless, the <span class="italic">mughataat bialmalabis</span> are not a closed culture, and their contributions have frequently driven significant advances in human development across the <span class="italic">AN</span>. Their work is particularly noted in the fields of stellar cartography, antimemetic countermeasures (still under investigation), and the aforementioned development of thermal insulation technology, now widely applied throughout known space.`,
 }

@@ -2,8 +2,10 @@
 import { defineAsyncComponent } from 'vue'
 import { usePageBackground } from '../composables/usePageBackground'
 import audioImg from '@images/audio.jpg'
-import audioTrack1 from '../audio/Traversing the Ecumen Refinery.wav'
+import audioTrack1 from '../audio/Traversing the Ecumen Refinery.mp3'
 import audioTrack2 from '../audio/Test signal - archivo 002.mp3'
+import audioTrack3 from '../audio/Under the scorching Chanai 1.mp3'
+
 import LazyMount from '../components/LazyMount.vue'
 
 const AudioPlayer = defineAsyncComponent(
@@ -14,8 +16,8 @@ const { useViewBackground } = usePageBackground()
 
 useViewBackground({
   imageSrc: audioImg,
-  speed: 0.6,
-  mdSpeed: 1,
+  speed: 0.5,
+  mdSpeed: 0.8,
   initialOffset: 300,
   mdInitialOffset: 350,
   type: 'scroll',
@@ -57,7 +59,7 @@ const moveToFirstAudioSectionElement = () => {
 
       <div class="w-full audio-section">
         <div
-          class="text-base sm:text-lg bg-black/30 p-3 w-fit"
+          class="text-base sm:text-lg bg-black/30 p-3 w-fit text-justify"
           v-html="$t('audio.entry-1-data')"
         ></div>
 
@@ -66,8 +68,21 @@ const moveToFirstAudioSectionElement = () => {
         </LazyMount>
 
         <div
-          class="mt-6 text-base sm:text-lg bg-black/30 p-3"
+          class="mt-6 text-base sm:text-lg bg-black/30 p-3 text-justify"
           v-html="$t('audio.entry-1-desc')"
+        ></div>
+      </div>
+
+      <div class="w-full border-t border-white/25 my-14"></div>
+
+      <div class="w-full audio-section">
+        <LazyMount>
+          <AudioPlayer :src="audioTrack3" :title="$t('audio.entry-3-title')" />
+        </LazyMount>
+
+        <div
+          class="mt-6 text-base sm:text-lg bg-black/30 p-3 text-justify"
+          v-html="$t('audio.entry-3-desc')"
         ></div>
       </div>
 
@@ -79,7 +94,7 @@ const moveToFirstAudioSectionElement = () => {
         </LazyMount>
 
         <div
-          class="mt-6 text-base sm:text-lg bg-black/30 p-3"
+          class="mt-6 text-base sm:text-lg bg-black/30 p-3 text-justify"
           v-html="$t('audio.entry-2-desc')"
         ></div>
       </div>

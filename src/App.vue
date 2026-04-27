@@ -19,6 +19,7 @@ const { currentMaxWidth } = useMainWidth()
       :image-src="currentBackground.imageSrc"
       :speed="currentBackground.speed"
       :md-speed="currentBackground.mdSpeed"
+      :lg-speed="currentBackground.lgSpeed"
       :type="currentBackground.type"
       :img-size="currentBackground.imgSize"
       :img-position="currentBackground.imgPosition"
@@ -30,6 +31,7 @@ const { currentMaxWidth } = useMainWidth()
       :overlay-color="currentBackground.overlayColor"
       :initial-offset="currentBackground.initialOffset"
       :md-initial-offset="currentBackground.mdInitialOffset"
+      :lg-initial-offset="currentBackground.lgInitialOffset"
       :scale="currentBackground.scale"
     />
 

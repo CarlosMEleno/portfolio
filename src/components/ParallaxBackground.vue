@@ -4,11 +4,13 @@ import type { ImagePosition } from '../types/parallax'
 import { defaultParallaxOptions } from '../types/parallax'
 
 const MD_BREAKPOINT = 768
+const LG_BREAKPOINT = 1024
 
 interface Props {
   imageSrc: string
   speed?: number
   mdSpeed?: number
+  lgSpeed?: number
   imgPosition?: ImagePosition
   zIndex?: number
   disableParallax?: boolean
@@ -16,6 +18,7 @@ interface Props {
   overlayColor?: string
   initialOffset?: number
   mdInitialOffset?: number
+  lgInitialOffset?: number
   scale?: number
   keepImg?: boolean
 }
@@ -23,6 +26,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   speed: defaultParallaxOptions.speed,
   mdSpeed: undefined,
+  lgSpeed: undefined,
   imgPosition: defaultParallaxOptions.imgPosition,
   zIndex: defaultParallaxOptions.zIndex,
   disableParallax: defaultParallaxOptions.disableParallax,
@@ -30,6 +34,7 @@ const props = withDefaults(defineProps<Props>(), {
   overlayColor: undefined,
   initialOffset: 0,
   mdInitialOffset: undefined,
+  lgInitialOffset: undefined,
   scale: 1,
 })
 
@@ -37,16 +42,21 @@ const containerRef = ref<HTMLElement | null>(null)
 const imgRef = ref<HTMLImageElement | null>(null)
 const isVisible = ref(false)
 const isMd = ref(false)
+const isLg = ref(false)
 
-const effectiveSpeed = computed(() =>
-  isMd.value && props.mdSpeed !== undefined ? props.mdSpeed : props.speed!
-)
+const effectiveSpeed = computed(() => {
+  if (isLg.value && props.lgSpeed !== undefined) return props.lgSpeed
+  if (isMd.value && props.mdSpeed !== undefined) return props.mdSpeed
+  return props.speed!
+})
 
-const effectiveInitialOffset = computed(() =>
-  isMd.value && props.mdInitialOffset !== undefined
-    ? props.mdInitialOffset
-    : (props.initialOffset ?? 0)
-)
+const effectiveInitialOffset = computed(() => {
+  if (isLg.value && props.lgInitialOffset !== undefined)
+    return props.lgInitialOffset
+  if (isMd.value && props.mdInitialOffset !== undefined)
+    return props.mdInitialOffset
+  return props.initialOffset ?? 0
+})
 
 // The image is 200% tall and starts at top: -50% (centered).
 // This gives 50vh of travel room in each direction.
@@ -63,12 +73,14 @@ const onScroll = (): void => {
 
 const onResize = (): void => {
   isMd.value = window.innerWidth >= MD_BREAKPOINT
+  isLg.value = window.innerWidth >= LG_BREAKPOINT
   onScroll()
 }
 
 onMounted((): void => {
   if (!props.imageSrc) return
   isMd.value = window.innerWidth >= MD_BREAKPOINT
+  isLg.value = window.innerWidth >= LG_BREAKPOINT
 
   const onImageReady = (): void => {
     if (!props.disableParallax) {
