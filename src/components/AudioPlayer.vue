@@ -7,6 +7,8 @@ const props = defineProps<{
   src: string
   title?: string
   description?: string
+  spectrogramDataUrl?: string
+  spectrogramSampleRate?: number
 }>()
 
 const containerRef = ref<HTMLElement | null>(null)
@@ -94,6 +96,13 @@ onMounted(() => {
         scale: 'mel',
         gainDB: 25,
         rangeDB: 80,
+        useWebWorker: true,
+        ...(props.spectrogramDataUrl
+          ? {
+              frequenciesDataUrl: props.spectrogramDataUrl,
+              sampleRate: props.spectrogramSampleRate ?? 44100,
+            }
+          : {}),
       }),
     ],
   })
