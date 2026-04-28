@@ -6,13 +6,6 @@ const { useViewBackground } = usePageBackground()
 
 useViewBackground({
   imageSrc: creditsImg,
-  speed: 1.5,
-  mdSpeed: 2.8,
-  lgSpeed: 4.4,
-  initialOffset: 330,
-  mdInitialOffset: 340,
-  lgInitialOffset: 420,
-  type: 'scroll',
 })
 </script>
 

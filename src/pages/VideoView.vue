@@ -10,11 +10,6 @@ useViewWidth('max-w-5xl')
 
 useViewBackground({
   imageSrc: videoImg,
-  speed: 1.5,
-  mdSpeed: 2.5,
-  initialOffset: 300,
-  mdInitialOffset: 340,
-  type: 'scroll',
 })
 </script>
 

@@ -7,8 +7,7 @@ const { useViewBackground } = usePageBackground()
 
 useViewBackground({
   imageSrc: redactedImg,
-  speed: 0.4,
-  type: 'scale',
+  disableParallax: true,
 })
 
 // ---------------------------------------------------------------------------

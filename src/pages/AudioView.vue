@@ -16,11 +16,6 @@ const { useViewBackground } = usePageBackground()
 
 useViewBackground({
   imageSrc: audioImg,
-  speed: 0.5,
-  mdSpeed: 0.8,
-  initialOffset: 300,
-  mdInitialOffset: 350,
-  type: 'scroll',
 })
 
 const moveToFirstAudioSectionElement = () => {

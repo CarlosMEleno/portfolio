@@ -1,92 +1,86 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import type { ImagePosition } from '../types/parallax'
 import { defaultParallaxOptions } from '../types/parallax'
 
-const MD_BREAKPOINT = 768
-const LG_BREAKPOINT = 1024
-
 interface Props {
   imageSrc: string
-  speed?: number
-  mdSpeed?: number
-  lgSpeed?: number
   imgPosition?: ImagePosition
   zIndex?: number
   disableParallax?: boolean
   containerClass?: string
   overlayColor?: string
-  initialOffset?: number
-  mdInitialOffset?: number
-  lgInitialOffset?: number
   scale?: number
   keepImg?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  speed: defaultParallaxOptions.speed,
-  mdSpeed: undefined,
-  lgSpeed: undefined,
   imgPosition: defaultParallaxOptions.imgPosition,
   zIndex: defaultParallaxOptions.zIndex,
   disableParallax: defaultParallaxOptions.disableParallax,
   containerClass: '',
   overlayColor: undefined,
-  initialOffset: 0,
-  mdInitialOffset: undefined,
-  lgInitialOffset: undefined,
   scale: 1,
 })
 
 const containerRef = ref<HTMLElement | null>(null)
 const imgRef = ref<HTMLImageElement | null>(null)
 const isVisible = ref(false)
-const isMd = ref(false)
-const isLg = ref(false)
+const maxScroll = ref(0)
 
-const effectiveSpeed = computed(() => {
-  if (isLg.value && props.lgSpeed !== undefined) return props.lgSpeed
-  if (isMd.value && props.mdSpeed !== undefined) return props.mdSpeed
-  return props.speed!
-})
+const updateMaxScroll = (): void => {
+  maxScroll.value = Math.max(
+    0,
+    document.documentElement.scrollHeight - window.innerHeight
+  )
+}
 
-const effectiveInitialOffset = computed(() => {
-  if (isLg.value && props.lgInitialOffset !== undefined)
-    return props.lgInitialOffset
-  if (isMd.value && props.mdInitialOffset !== undefined)
-    return props.mdInitialOffset
-  return props.initialOffset ?? 0
-})
-
-// The image is 200% tall and starts at top: -50% (centered).
-// This gives 50vh of travel room in each direction.
-// As the user scrolls down, we apply a negative translateY so the image
-// drifts upward slower than the content, creating the parallax illusion.
-// Factor = speed * 0.3 → e.g. speed 0.5 → image moves at 15% of scroll rate.
+// The image is 200vh tall with top: -50vh, so its center sits at y = H/2
+// within the fixed viewport. With transform: translateY(t) scale(s):
+//   rendered top    = H/2 - H·s + t
+//   rendered bottom = H/2 + H·s + t
+//
+// Target: top of image visible at scroll=0, bottom visible at scroll=maxScroll.
+//   t₀ = H·(s − 0.5)   →  rendered top  = 0
+//   t₁ = H·(0.5 − s)   →  rendered bottom = H
+//
+// Linear interpolation gives:
+//   t = H·(s − 0.5)·(1 − 2·scrollY / maxScroll)
+//
+// When maxScroll = 0 (page fits in viewport) → center the image (t = 0).
 const onScroll = (): void => {
   if (!imgRef.value || props.disableParallax) return
-  const scrollOffset = -(window.scrollY * effectiveSpeed.value * 0.3)
-  const totalOffset = scrollOffset + effectiveInitialOffset.value
-  const scaleValue = props.scale ?? 1
-  imgRef.value.style.transform = `translateY(${totalOffset}px) scale(${scaleValue})`
+  const H = window.innerHeight
+  const ms = maxScroll.value
+  const s = props.scale ?? 1
+
+  const translateY =
+    ms > 0 ? H * (s - 0.5) * (1 - (2 * window.scrollY) / ms) : 0
+
+  imgRef.value.style.transform = `translateY(${translateY}px) scale(${s})`
 }
 
 const onResize = (): void => {
-  isMd.value = window.innerWidth >= MD_BREAKPOINT
-  isLg.value = window.innerWidth >= LG_BREAKPOINT
+  updateMaxScroll()
   onScroll()
 }
 
+let bodyResizeObserver: ResizeObserver | null = null
+
 onMounted((): void => {
   if (!props.imageSrc) return
-  isMd.value = window.innerWidth >= MD_BREAKPOINT
-  isLg.value = window.innerWidth >= LG_BREAKPOINT
 
   const onImageReady = (): void => {
     if (!props.disableParallax) {
+      updateMaxScroll()
       onScroll()
       window.addEventListener('scroll', onScroll, { passive: true })
       window.addEventListener('resize', onResize, { passive: true })
+      bodyResizeObserver = new ResizeObserver(() => {
+        updateMaxScroll()
+        onScroll()
+      })
+      bodyResizeObserver.observe(document.body)
     }
     isVisible.value = true
   }
@@ -100,6 +94,8 @@ onMounted((): void => {
 onUnmounted((): void => {
   window.removeEventListener('scroll', onScroll)
   window.removeEventListener('resize', onResize)
+  bodyResizeObserver?.disconnect()
+  bodyResizeObserver = null
 })
 </script>
 

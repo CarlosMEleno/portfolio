@@ -14,11 +14,6 @@ useViewWidth('max-w-4xl')
 
 useViewBackground({
   imageSrc: contactImg,
-  speed: 1.3,
-  mdSpeed: 2,
-  initialOffset: 280,
-  mdInitialOffset: 360,
-  type: 'scroll',
 })
 </script>
 

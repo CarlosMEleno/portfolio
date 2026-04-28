@@ -10,12 +10,6 @@ useViewWidth('max-w-5xl')
 // Configura el background parallax para esta vista
 useViewBackground({
   imageSrc: homeimg,
-  speed: 2,
-  mdSpeed: 3.2,
-  initialOffset: 300,
-  mdInitialOffset: 340,
-  type: 'scroll',
-  scale: 1, // Menos zoom (más alejado)
 })
 </script>
 

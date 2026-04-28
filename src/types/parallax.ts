@@ -31,16 +31,6 @@ export interface ParallaxOptions {
   imageSrc: string
 
   /**
-   * Parallax effect speed (mobile). Provide numbers from -1.0 to 2.0
-   * @default 0.5
-   */
-  speed?: number
-  /** Speed override from 768 px (Tailwind md). Falls back to speed if undefined. */
-  mdSpeed?: number
-  /** Speed override from 1024 px (Tailwind lg). Falls back to mdSpeed, then speed if undefined. */
-  lgSpeed?: number
-
-  /**
    * Type of parallax effect
    * @default 'scroll'
    */
@@ -93,16 +83,6 @@ export interface ParallaxOptions {
   overlayColor?: string
 
   /**
-   * Initial vertical offset in pixels (mobile, positive = start lower, negative = start higher)
-   * @default 0
-   */
-  initialOffset?: number
-  /** initialOffset override from 768 px (Tailwind md). Falls back to initialOffset if undefined. */
-  mdInitialOffset?: number
-  /** initialOffset override from 1024 px (Tailwind lg). Falls back to mdInitialOffset, then initialOffset if undefined. */
-  lgInitialOffset?: number
-
-  /**
    * Image scale factor. Values < 1 zoom out, > 1 zoom in
    * @default 1
    */
@@ -110,7 +90,6 @@ export interface ParallaxOptions {
 }
 
 export const defaultParallaxOptions: Partial<ParallaxOptions> = {
-  speed: 0.5,
   type: 'scroll',
   imgSize: 'cover',
   imgPosition: 'center',
@@ -118,6 +97,5 @@ export const defaultParallaxOptions: Partial<ParallaxOptions> = {
   keepImg: true,
   zIndex: -100,
   disableParallax: false,
-  initialOffset: 0,
   scale: 1,
 }
