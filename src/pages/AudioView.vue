@@ -7,6 +7,7 @@ import audioTrack2 from '../audio/Test signal - archivo 002.mp3'
 import audioTrack3 from '../audio/Under the scorching Chanai 1.mp3'
 
 import LazyMount from '../components/LazyMount.vue'
+import CollapsibleText from '../components/CollapsibleText.vue'
 
 const AudioPlayer = defineAsyncComponent(
   () => import('../components/AudioPlayer.vue')
@@ -62,10 +63,7 @@ const moveToFirstAudioSectionElement = () => {
           <AudioPlayer :src="audioTrack1" :title="$t('audio.entry-1-title')" />
         </LazyMount>
 
-        <div
-          class="mt-6 text-base sm:text-lg bg-black/30 p-3 text-justify"
-          v-html="$t('audio.entry-1-desc')"
-        ></div>
+        <CollapsibleText class="mt-6" :html="$t('audio.entry-1-desc')" />
       </div>
 
       <div class="w-full border-t border-white/25 my-14"></div>
@@ -75,10 +73,7 @@ const moveToFirstAudioSectionElement = () => {
           <AudioPlayer :src="audioTrack3" :title="$t('audio.entry-3-title')" />
         </LazyMount>
 
-        <div
-          class="mt-6 text-base sm:text-lg bg-black/30 p-3 text-justify"
-          v-html="$t('audio.entry-3-desc')"
-        ></div>
+        <CollapsibleText class="mt-6" :html="$t('audio.entry-3-desc')" />
       </div>
 
       <div class="w-full border-t border-white/25 my-14"></div>
@@ -88,10 +83,7 @@ const moveToFirstAudioSectionElement = () => {
           <AudioPlayer :src="audioTrack2" :title="$t('audio.entry-2-title')" />
         </LazyMount>
 
-        <div
-          class="mt-6 text-base sm:text-lg bg-black/30 p-3 text-justify"
-          v-html="$t('audio.entry-2-desc')"
-        ></div>
+        <CollapsibleText class="mt-6" :html="$t('audio.entry-2-desc')" />
       </div>
     </div>
   </div>
