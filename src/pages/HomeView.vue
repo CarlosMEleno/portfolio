@@ -26,12 +26,12 @@ useViewBackground({
       </h2>
     </div>
     <div class="h-[800px] flex flex-col">
-      <a
+      <RouterLink
         class="mt-[330px] bg-black/70 hover:bg-gray-300 hover:!text-black text-white font-astron rounded-full px-6 sm:px-10 py-2 sm:py-3 text-base sm:text-lg mx-auto block transition-colors duration-200 animate-terminal-flicker animation-delay-200"
-        href="/audio"
+        to="/audio"
       >
         {{ $t('home.listen') }}
-      </a>
+      </RouterLink>
     </div>
     <div
       class="flex flex-col items-center animate-pulse px-2 mb-10"
