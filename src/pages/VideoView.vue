@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { usePageBackground } from '../composables/usePageBackground'
+import { usePageMeta } from '../composables/usePageMeta'
 import videoImg from '@images/video.jpg'
 import VideoPlayer from '../components/VideoPlayer.vue'
 import { useMainWidth } from '../composables/useMainWidth'
@@ -11,6 +12,8 @@ useViewWidth('max-w-5xl')
 useViewBackground({
   imageSrc: videoImg,
 })
+
+usePageMeta('meta.video.title', 'meta.video.description')
 </script>
 
 <template>
@@ -31,14 +34,22 @@ useViewBackground({
     </div>
 
     <div class="mt-16 md:mt-20 flex flex-col gap-24">
-      <VideoPlayer video-id="rmHXOcQxVOE" video-position="left">
+      <VideoPlayer
+        video-id="rmHXOcQxVOE"
+        video-position="left"
+        :title="$t('video.project-1-title')"
+      >
         <p
           class="text-lg sm:text-xl md:text-2xl bg-black/30 px-2 py-0 inline box-decoration-clone leading-[26px]"
           v-html="$t('video.project-1-desc')"
         ></p>
       </VideoPlayer>
 
-      <VideoPlayer video-id="7DbQNOJ_l4g" video-position="right">
+      <VideoPlayer
+        video-id="7DbQNOJ_l4g"
+        video-position="right"
+        :title="$t('video.project-2-title')"
+      >
         <p
           class="text-lg sm:text-xl md:text-2xl bg-black/30 px-2 py-0 inline box-decoration-clone leading-[26px]"
           v-html="$t('video.project-2-desc')"

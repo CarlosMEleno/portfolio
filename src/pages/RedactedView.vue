@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { usePageBackground } from '../composables/usePageBackground'
+import { usePageMeta } from '../composables/usePageMeta'
 import redactedImg from '@images/redacted.jpg'
 
 const { useViewBackground } = usePageBackground()
@@ -9,6 +10,8 @@ useViewBackground({
   imageSrc: redactedImg,
   disableParallax: true,
 })
+
+usePageMeta('meta.redacted.title', 'meta.redacted.description')
 
 // ---------------------------------------------------------------------------
 // Cómo generar un hash SHA-256 para añadir una contraseña:
@@ -93,6 +96,7 @@ const onBlackoutEnd = () => {
           v-model="input"
           type="password"
           autocomplete="off"
+          aria-label="Access password"
           class="w-full bg-transparent border-b border-white/50 focus:border-white outline-none text-center text-white font-astron tracking-[0.3em] py-2 text-sm sm:text-base transition-colors duration-200 placeholder:text-white/30"
           placeholder="_ _ _ _ _ _ _"
         />

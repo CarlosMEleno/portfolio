@@ -1,6 +1,47 @@
 export default {
   'fake-text': 'Texto de prueba',
 
+  // Meta de página (título + descripción para SEO)
+  'meta.home.title': 'Dormant Sounds',
+  'meta.home.description':
+    'Dossier audiovisual de Carlos Martínez Eleno. Composición original, diseño sonoro y ficción experimental.',
+  'meta.audio.title': 'Audio — Dormant Sounds',
+  'meta.audio.description':
+    'Composiciones originales, diseño sonoro y producción musical de Carlos Martínez Eleno.',
+  'meta.video.title': 'Video — Dormant Sounds',
+  'meta.video.description':
+    'Bandas sonoras originales y diseño sonoro para proyectos audiovisuales.',
+  'meta.credits.title': 'Créditos — Dormant Sounds',
+  'meta.credits.description':
+    'Discografía, bandas sonoras y créditos de diseño sonoro.',
+  'meta.contact.title': 'Contacto — Dormant Sounds',
+  'meta.contact.description':
+    'Sobre Carlos Martínez Eleno: compositor, diseñador sonoro y guionista.',
+  'meta.redacted.title': 'Redacted — Dormant Sounds',
+  'meta.redacted.description': 'Acceso clasificado.',
+
+  // Accesibilidad
+  'a11y.skip-to-content': 'Ir al contenido',
+  'a11y.now-playing': 'Reproduciendo',
+  'a11y.paused': 'Pausado',
+  'a11y.menu-toggle': 'Abrir/cerrar menú',
+
+  // Componentes de UI
+  'ui.expand': 'Desplegar',
+  'ui.collapse': 'Plegar',
+
+  // Controles del reproductor de audio
+  'audio.player.skip-back': 'Retroceder 5 segundos',
+  'audio.player.play': 'Reproducir',
+  'audio.player.pause': 'Pausar',
+  'audio.player.skip-forward': 'Adelantar 5 segundos',
+  'audio.player.waveform-toggle': 'Forma de onda / Espectrograma',
+  'audio.player.zoom-out': 'Alejar',
+  'audio.player.zoom-in': 'Acercar',
+  'audio.player.mute': 'Silenciar',
+  'audio.player.unmute': 'Activar sonido',
+  'audio.player.decoding': 'DECODIFICANDO — {progress}%',
+
   // Títulos globales de página
   contact: 'CONTACTO / SOBRE MÍ',
   video: 'VIDEO',
@@ -41,6 +82,11 @@ Recuerde que todo lo que observe aquí es material clasificado. La Corporación 
   'contact.tfg-description':
     '(Acerca del analog horror y las nuevas corrientes de ficción en internet)',
   'contact.tfg-download': 'DESCARGAR PDF',
+
+  // Títulos de vídeo (para accesibilidad del iframe)
+  'video.project-1-title': 'Those Who Wander',
+  'video.project-2-title':
+    'PLANES, HUECOS - II Festival de Cortos Pelabravo Express',
 
   // Página de vídeo
   'video.intro':

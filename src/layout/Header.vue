@@ -22,7 +22,8 @@ const closeMobileMenu = (): void => {
       <!-- Mobile: Hamburger button -->
       <button
         class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-md hover:bg-white/10 transition-colors"
-        aria-label="Toggle menu"
+        :aria-label="$t('a11y.menu-toggle')"
+        :aria-expanded="isMobileMenuOpen"
         @click="toggleMobileMenu"
       >
         <svg

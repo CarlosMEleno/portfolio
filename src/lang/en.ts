@@ -1,6 +1,47 @@
 export default {
   'fake-text': 'Test text',
 
+  // Page meta (title + description for SEO)
+  'meta.home.title': 'Dormant Sounds',
+  'meta.home.description':
+    'Audiovisual dossier by Carlos Martínez Eleno. Original composition, sound design, and experimental fiction.',
+  'meta.audio.title': 'Audio — Dormant Sounds',
+  'meta.audio.description':
+    'Original compositions, sound design and music production by Carlos Martínez Eleno.',
+  'meta.video.title': 'Video — Dormant Sounds',
+  'meta.video.description':
+    'Original soundtracks and sound design for audiovisual projects.',
+  'meta.credits.title': 'Credits — Dormant Sounds',
+  'meta.credits.description':
+    'Discography, soundtracks and sound design credits.',
+  'meta.contact.title': 'Contact — Dormant Sounds',
+  'meta.contact.description':
+    'About Carlos Martínez Eleno: composer, sound designer and screenwriter.',
+  'meta.redacted.title': 'Redacted — Dormant Sounds',
+  'meta.redacted.description': 'Classified access.',
+
+  // Accessibility
+  'a11y.skip-to-content': 'Skip to content',
+  'a11y.now-playing': 'Now playing',
+  'a11y.paused': 'Paused',
+  'a11y.menu-toggle': 'Toggle menu',
+
+  // UI components
+  'ui.expand': 'Expand',
+  'ui.collapse': 'Collapse',
+
+  // Audio player controls
+  'audio.player.skip-back': 'Skip back 5 seconds',
+  'audio.player.play': 'Play',
+  'audio.player.pause': 'Pause',
+  'audio.player.skip-forward': 'Skip forward 5 seconds',
+  'audio.player.waveform-toggle': 'Waveform / Spectrogram',
+  'audio.player.zoom-out': 'Zoom out',
+  'audio.player.zoom-in': 'Zoom in',
+  'audio.player.mute': 'Mute',
+  'audio.player.unmute': 'Unmute',
+  'audio.player.decoding': 'DECODING — {progress}%',
+
   // Global page titles
   contact: 'CONTACT / ABOUT ME',
   video: 'VIDEO',
@@ -41,6 +82,11 @@ Remember that everything you observe here is classified material. The Corporatio
   'contact.tfg-description':
     '(About analog horror and new currents of fiction on the internet)',
   'contact.tfg-download': 'DOWNLOAD PDF',
+
+  // Video titles (for iframe accessibility)
+  'video.project-1-title': 'Those Who Wander',
+  'video.project-2-title':
+    'PLANES, HUECOS - II Pelabravo Express Short Film Festival',
 
   // Video page
   'video.intro':

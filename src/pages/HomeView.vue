@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 import { usePageBackground } from '../composables/usePageBackground'
 import { useMainWidth } from '../composables/useMainWidth'
+import { usePageMeta } from '../composables/usePageMeta'
 import homeimg from '@images/home.jpg'
 const { useViewBackground } = usePageBackground()
 const { useViewWidth } = useMainWidth()
 
 useViewWidth('max-w-5xl')
+usePageMeta('meta.home.title', 'meta.home.description')
 
 // Configura el background parallax para esta vista
 useViewBackground({

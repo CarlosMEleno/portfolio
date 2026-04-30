@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { usePageBackground } from '../composables/usePageBackground'
+import { usePageMeta } from '../composables/usePageMeta'
 import creditsImg from '@images/credits.jpg'
 
 const { useViewBackground } = usePageBackground()
@@ -7,6 +8,8 @@ const { useViewBackground } = usePageBackground()
 useViewBackground({
   imageSrc: creditsImg,
 })
+
+usePageMeta('meta.credits.title', 'meta.credits.description')
 </script>
 
 <template>

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { ref, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
+import { useI18n } from 'vue-i18n'
 import WaveSurfer from 'wavesurfer.js'
 import SpectrogramPlugin from 'wavesurfer.js/dist/plugins/spectrogram.js'
 
@@ -10,6 +11,8 @@ const props = defineProps<{
   spectrogramDataUrl?: string
   spectrogramSampleRate?: number
 }>()
+
+const { t } = useI18n()
 
 const containerRef = ref<HTMLElement | null>(null)
 const titleContainerRef = ref<HTMLElement | null>(null)
@@ -175,6 +178,11 @@ const zoomOut = () => {
 
 <template>
   <div class="w-full select-none">
+    <!-- Screen-reader live region for playback state -->
+    <div aria-live="polite" aria-atomic="true" class="sr-only">
+      {{ isPlaying ? t('a11y.now-playing') : isReady ? t('a11y.paused') : '' }}
+    </div>
+
     <!-- Title with marquee -->
     <div
       v-if="props.title"
@@ -238,7 +246,7 @@ const zoomOut = () => {
           <span
             class="absolute bottom-2 left-0 right-0 text-center text-[9px] font-mono tracking-[0.45em] text-white/30 animate-terminal-flicker"
           >
-            DECODIFICANDO — {{ loadProgress }}%
+            {{ t('audio.player.decoding', { progress: loadProgress }) }}
           </span>
         </div>
       </Transition>
@@ -259,7 +267,8 @@ const zoomOut = () => {
       >
         <button
           class="w-9 h-9 sm:w-8 sm:h-8 flex items-center justify-center text-white/45 hover:text-white transition-colors duration-200"
-          title="Retroceder 5s"
+          :title="t('audio.player.skip-back')"
+          :aria-label="t('audio.player.skip-back')"
           @click="skip(-5)"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -282,7 +291,10 @@ const zoomOut = () => {
 
         <button
           class="w-14 h-14 sm:w-12 sm:h-12 flex items-center justify-center text-white/60 hover:text-white transition-colors duration-200"
-          :title="isPlaying ? 'Pausar' : 'Reproducir'"
+          :title="isPlaying ? t('audio.player.pause') : t('audio.player.play')"
+          :aria-label="
+            isPlaying ? t('audio.player.pause') : t('audio.player.play')
+          "
           @click="togglePlay"
         >
           <svg
@@ -307,7 +319,8 @@ const zoomOut = () => {
 
         <button
           class="w-9 h-9 sm:w-8 sm:h-8 flex items-center justify-center text-white/45 hover:text-white transition-colors duration-200"
-          title="Adelantar 5s"
+          :title="t('audio.player.skip-forward')"
+          :aria-label="t('audio.player.skip-forward')"
           @click="skip(5)"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -351,7 +364,8 @@ const zoomOut = () => {
           <button
             class="relative w-8 sm:w-9 h-[16px] sm:h-[18px] border border-white/20 transition-all duration-300 shrink-0"
             :class="showSpectrogram ? 'bg-white/10' : 'bg-transparent'"
-            title="Forma de onda / Espectrograma"
+            :title="t('audio.player.waveform-toggle')"
+            :aria-label="t('audio.player.waveform-toggle')"
             @click="showSpectrogram = !showSpectrogram"
           >
             <span
@@ -370,14 +384,16 @@ const zoomOut = () => {
         <div class="flex items-center gap-0.5">
           <button
             class="w-6 h-6 flex items-center justify-center text-sm font-mono text-white/35 hover:text-white/75 transition-colors duration-200"
-            title="Alejar"
+            :title="t('audio.player.zoom-out')"
+            :aria-label="t('audio.player.zoom-out')"
             @click="zoomOut"
           >
             −
           </button>
           <button
             class="w-6 h-6 flex items-center justify-center text-sm font-mono text-white/35 hover:text-white/75 transition-colors duration-200"
-            title="Acercar"
+            :title="t('audio.player.zoom-in')"
+            :aria-label="t('audio.player.zoom-in')"
             @click="zoomIn"
           >
             +
@@ -387,7 +403,10 @@ const zoomOut = () => {
         <!-- Mute -->
         <button
           class="w-6 h-6 flex items-center justify-center text-white/45 hover:text-white transition-colors duration-200 shrink-0"
-          :title="isMuted ? 'Activar sonido' : 'Silenciar'"
+          :title="isMuted ? t('audio.player.unmute') : t('audio.player.mute')"
+          :aria-label="
+            isMuted ? t('audio.player.unmute') : t('audio.player.mute')
+          "
           @click="toggleMute"
         >
           <svg

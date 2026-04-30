@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { usePageBackground } from '../composables/usePageBackground'
+import { usePageMeta } from '../composables/usePageMeta'
 import contactImg from '@images/contact.jpg'
 import bandcampIcon from '@images/bandcamp.svg'
 import soundcloudIcon from '@images/soundcloud.svg'
@@ -15,6 +16,8 @@ useViewWidth('max-w-4xl')
 useViewBackground({
   imageSrc: contactImg,
 })
+
+usePageMeta('meta.contact.title', 'meta.contact.description')
 </script>
 
 <template>

@@ -1,9 +1,12 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{
   html: string
 }>()
+
+const { t } = useI18n()
 
 const isExpanded = ref(false)
 const hasOverflow = ref(false)
@@ -53,7 +56,8 @@ onMounted(() => {
     >
       <button
         class="p-1.5 bg-white/90 border border-white text-black hover:bg-white hover:border-white/60 transition-colors duration-200 cursor-pointer"
-        :title="isExpanded ? 'Plegar' : 'Desplegar'"
+        :title="isExpanded ? t('ui.collapse') : t('ui.expand')"
+        :aria-label="isExpanded ? t('ui.collapse') : t('ui.expand')"
         @click="isExpanded = !isExpanded"
       >
         <!-- Chevron down: expand -->

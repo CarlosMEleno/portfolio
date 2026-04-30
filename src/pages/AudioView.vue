@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { defineAsyncComponent } from 'vue'
 import { usePageBackground } from '../composables/usePageBackground'
+import { usePageMeta } from '../composables/usePageMeta'
 import audioImg from '@images/audio.jpg'
 import audioTrack1 from '../audio/Traversing the Ecumen Refinery.mp3'
 import audioTrack2 from '../audio/Test signal - archivo 002.mp3'
@@ -18,6 +19,8 @@ const { useViewBackground } = usePageBackground()
 useViewBackground({
   imageSrc: audioImg,
 })
+
+usePageMeta('meta.audio.title', 'meta.audio.description')
 
 const moveToFirstAudioSectionElement = () => {
   const audioSectionElements = document.querySelectorAll('.audio-section')
